@@ -105,6 +105,11 @@ router.get('/vps-offer-gen', async (req, res) => {
     res.render('vps-offer-gen');
 });
 
+router.get('/zimbra-offer-gen', async (req, res) => {
+    // quering offers and adding a new parameter for checking verification
+    res.render('zimbra-offer-gen');
+});
+
 router.use(userRoutes);
 
 module.exports = router;

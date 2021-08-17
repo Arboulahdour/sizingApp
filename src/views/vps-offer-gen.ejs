@@ -713,6 +713,15 @@
         cursor: help;
     }
 
+    .devis-input-style {
+        border: 1px solid white;
+        background: none;
+        color: white;
+        border-radius: 6%;
+        padding: 7px;
+        max-width: 170px;
+    }
+
       
 
     /* General Styles */
@@ -770,7 +779,10 @@
             <span class="hamb-bottom"></span>
         </button>
         <div class="container">
-        <h2 class="text-left text-white" style="margin-top: 0px; margin-bottom: 20px;">Offre VPS Cloud</h2>
+        <div class="col-md-12 d-flex justify-content-between p-0" style="margin-top: 0px; margin-bottom: 20px;">
+            <h2 class="text-left text-white">Offre VPS Cloud</h2>
+            <h4 class="text-right text-white">Devis N°: <input type="text" id="devis-num" class="devis-input-style" /></h4>
+        </div>
         <hr style="background: white; margin-bottom: 30px;"/>
         <h3 class="col-md-12 custom-title"><i class="fa fa-server mr-2" aria-hidden="true"></i> Pack VPS :</h3>
         <div class="row col-md-12 estimate-support">
@@ -1029,7 +1041,7 @@
             
             <div class="col-md-12 custom-title-estim d-flex justify-content-between">
                 <h3><i class="fas fa-cash-register mr-3"></i>Estimation Totale :</h3>
-                <button class="btn btn-primary text-white" data-toggle="modal" data-target=".bd-example-modal-lg">Voir Estimation <i class="fas fa-expand ml-2"></i></button>
+                <button class="btn btn-primary text-white" data-toggle="modal" data-target=".bd-example-modal-lg">Aperçu sur un fichier PDF<i class="fas fa-expand ml-2"></i></button>
             </div>
 
             <div class="col-md-12 estimate-total-price">
@@ -1102,19 +1114,19 @@
                                 <li style="font-size: 13px;"><b>AI: </b>16500658016</li>
                                 <li style="font-size: 13px;"><b>RIB: </b>032 00001 4305801208 93</li>
                                 <li style="font-size: 13px;"><b>Banque: </b>AGB</li>
-                                <li style="font-size: 13px;"><b>Contact: </b><a href="abderrahmane.bouladour@adextechnology.dz"> <%= email %> </a></li>
+                                <li style="font-size: 13px;"><b>Contact: </b><a href="abderrahmane.bouladour@adextechnology.dz"> abderrahmane.boulahdour@adextechnology.dz </a></li>
                             </ul>
                         </div>
             
                         <div class="col-md-5 p-0">
                             <ul style="list-style-type: none; letter-spacing: 1px; line-height: 1.2rem; text-align: left;">
                                 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                                <li style="font-size: 13px;"><b>Client: </b>Saidal</li> 
-                                <li style="font-size: 13px;"><b>Adresse: </b></li>
+                                <li style="font-size: 13px;"><b>Client: CELIA</b></li> 
+                                <li style="font-size: 13px;"><b>Adresse: </b>Alger</li>
                             </ul>
                         </div>
                     </div>
-                    <h3 class="mb-2" style="margin-top: -3px;">Devis N°: <span>21C-000-028</span></h3>
+                    <h3 class="mb-2" style="margin-top: -3px;">Devis N°: <span id="devis-num-pdf"></span></h3>
                     <h4 class="mb-2">Pack VPS : </h4>
                     <table class="table">
                         <thead class="bg-primary text-white">
@@ -1189,7 +1201,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <h4 class="mb-2 mt-2">Support : </h4>
+                    <h4 class="mb-2 mt-5">Support : </h4>
                     <table class="table">
                         <thead class="bg-primary text-white">
                             <tr>
@@ -1254,6 +1266,13 @@
                             </tr>
                         </tbody>
                     </table>
+                    <ul class="mb-3 pl-4 pr-4" style="line-height: 1.5rem; margin-top: 55px; list-style-type: none;">
+                        <li style="padding-bottom: 3px;"><b>Type de paiement : </b><span style="font-size: 15px;">Virement bancaire / Chèque / Espèces (un timbre de 1% sera rajouté en sus).</span></li>
+                        <li style="padding-bottom: 3px;"><b>Modalité de paiement : </b><span style="font-size: 15px;">100 % à la commande.</span></li>
+                        <li style="padding-bottom: 3px;"><b>Délai de livraison : </b><span style="font-size: 15px;">Provisioning service 24 h après délivrance bon de commande, payement et acceptation de conditions générales d’utilisations.</span></li>
+                        <li style="padding-bottom: 3px;"><b>Durée de la prestation : </b><span style="font-size: 15px;">Engagement Minimum 12 mois.</span></li>
+                        <li style="padding-bottom: 3px;"><b>Période d’essai : </b><span style="font-size: 15px;">2 semaines gratuite, si toute fois le client désire avoir une période de test au-delà de 2 se-maines, ADEXCLOUD, pourra concéder une période de test d’un(01) Mois supplémentaire sans engagement annuel moyennement un pré-payement d’abonnement équivalant au mois d’essai.</span></li>
+                    </ul>
                 </div>
                 </div>
                 <div class="modal-footer bg-light">
@@ -1385,6 +1404,21 @@
         supp_plat_detail["ri"]= "24h*7j*365";
         supp_plat_detail["gtr"]= "2 heures (après arrivée sur site)";
         supp_plat_detail["tam"]= "Oui";
+
+
+        // Devis Number
+        
+        var output_devis_num = document.getElementById("devis-num");
+        var output_devis_num_pdf = document.getElementById("devis-num-pdf");
+        // console.log("devis : ", output_devis_num.value)
+        output_devis_num_pdf.innerHTML = output_devis_num.value;
+
+        
+        output_devis_num.oninput = function() {
+        output_devis_num_pdf.innerHTML = this.value;
+        output_devis_num_pdf.innerHTML = this.value;
+        console.log("devis : ", output_devis_num.value)
+        }
 
         // Estimate Pack VPS Price //
 

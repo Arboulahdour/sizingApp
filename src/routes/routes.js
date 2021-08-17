@@ -102,12 +102,12 @@ router.get('/dashboard', checkAuth, async (req, res) => {
 
 router.get('/vps-offer-gen', async (req, res) => {
     // quering offers and adding a new parameter for checking verification
-    res.render('vps-offer-gen', { email: req.user.email });
+    res.render('vps-offer-gen'); // , { email: req.user.email }
 });
 
 router.get('/zimbra-offer-gen', async (req, res) => {
     // quering offers and adding a new parameter for checking verification
-    res.render('zimbra-offer-gen', { email: req.user.email });
+    res.render('zimbra-offer-gen');
 });
 
 router.use(userRoutes);

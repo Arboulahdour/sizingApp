@@ -717,9 +717,39 @@
         border: 1px solid white;
         background: none;
         color: white;
-        border-radius: 6%;
+        border-radius: 4%;
         padding: 7px;
         max-width: 170px;
+    }
+
+    .client-input-style {
+        border: 1px solid white;
+        background: none;
+        color: white;
+        border-radius: 4%;
+        padding: 7px;
+        max-width: 170px;
+    }
+
+    .address-input-style {
+        border: 1px solid white;
+        background: none;
+        color: white;
+        border-radius: 4%;
+        padding: 7px;
+        max-width: 230px;
+    }
+
+    @media (max-width: 400px) {
+        .devis-input-style {
+        max-width: 120px;
+    }
+        .address-input-style {
+        max-width: 120px;
+    }
+        .address-input-style {
+        max-width: 120px;
+    }
     }
       
 
@@ -762,8 +792,8 @@
             </div>
           </div>
           <li><a href="/dashboard">Tableau de board</a></li>
-          <li><a href="#about">Offre VPS</a></li>
-          <li><a href="#events">Offre Zimbra</a></li>
+          <li><a href="/vps-offer-gen">Offre VPS</a></li>
+          <li><a href="/zimbra-offer-gen">Offre Zimbra</a></li>
           <li><a href="#team">Offre Web</a></li>
          <li><a href="/logout">Deconnecter</a></li>
          </ul>
@@ -780,7 +810,12 @@
         <div class="container">
         <div class="col-md-12 d-flex justify-content-between p-0" style="margin-top: 0px; margin-bottom: 20px;">
             <h2 class="text-left text-white">Offre Messagerie Zimbra</h2>
-            <h4 class="text-right text-white">Devis N°: <input type="text" id="devis-num" class="devis-input-style" /></h4>
+            <h4 class="text-right text-white">Devis N°: <input type="text" id="devis-num" class="devis-input-style ml-1" /></h4>
+        </div>
+        <hr style="background: white; margin-bottom: 30px;"/>
+        <div class="col-md-12 d-flex p-0" style="margin-top: 0px; margin-bottom: 20px;">
+            <h5 class="text-white">Client: <input type="text" id="client-name" class="client-input-style ml-1 mr-3" /></h5>
+            <h5 class="text-white">Adresse: <input type="text" id="client-address" class="address-input-style ml-1" /></h5>
         </div>
         <hr style="background: white; margin-bottom: 30px;"/>
         <h3 class="col-md-12 custom-title"><i class="fa fa-server mr-2" aria-hidden="true"></i> Solutions Zimbra :</h3>
@@ -852,7 +887,7 @@
                             <input type="checkbox" name="pack" id="large" onchange="onlyOnePack(this)"/>
                             <span></span>
                         </label>
-                        <h5 class="card-title" style="text-align: center;">PROFESIONNEL</h5>
+                        <h5 class="card-title" style="text-align: center;">PROFFESIONNEL</h5>
                         <div style="text-align: center; padding-top: 20px; padding-bottom: 20px;">
                             <img src='img/zimbra.svg' height="150px" width="100%"/>
                         </div>
@@ -1123,8 +1158,8 @@
                         <div class="col-md-5 p-0">
                             <ul style="list-style-type: none; letter-spacing: 1px; line-height: 1.2rem; text-align: left;">
                                 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                                <li style="font-size: 13px;"><b>Client: SAIDAL</b></li> 
-                                <li style="font-size: 13px;"><b>Adresse: </b>Alger</li>
+                                <li style="font-size: 13px;"><b>Client: <span id="client-name-pdf"></span></b></li> 
+                                <li style="font-size: 13px;"><b>Adresse: </b><span id="client-address-pdf"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -1142,11 +1177,14 @@
                                 <td id="pack-type-pdf">Basic</td>
                                 <td colspan="2">
                                     <ul style="list-style-type: none; line-height: 1.5rem; text-align: left;">
-                                        <li>vCORE : 0<span id="pack-cpu-pdf">1</span></li> 
-                                        <li>Memoire RAM: 0<span id="pack-ram-pdf">2</span> Go.</li>
-                                        <li>Disque de stockage: <span id="pack-disk-pdf">40</span> Go.</li>
-                                        <li>Bande Passante: Illimitée.</li>
-                                        <li>IP: Offerte.</li>
+                                        <li>0<span id="zimbra-disk-pdf">1</span> Go de Stockage</li>
+                                        <li>Messagerie POP, IMAP, SMTP</li>
+                                        <li>Contact / Taches / Client Web Mobile.</li>
+                                        <li><span id="zimbra-tcts-pdf"></span></li>
+                                        <li><span id="zimbra-cal-pdf"></span></li>
+                                        <li><span id="zimbra-mapi-pdf"></span></li>
+                                        <li><span id="zimbra-cnx-pdf"></span></li>
+                                        <li>Antivirus</li>
                                     </ul>
                                 </td>
                                 <td id="pack-price-pdf">200</td>
@@ -1185,8 +1223,8 @@
                             </tr>
                         </tbody>
                     </table>
-                    <br/>
-                    <h4 class="mb-2">Support : </h4>
+                    <br/><br/>
+                    <h4 class="mb-2 mt-3">Support : </h4>
                     <table class="table">
                         <thead class="bg-primary text-white">
                             <tr>
@@ -1220,8 +1258,8 @@
                                 <th></th>
                                 <th></th>
                                 <th></th>
-                                <th></th>
-                                <th>Prix (DZD)</th>
+                                
+                                <th colspan="2">Prix mois/année (DZD)</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -1229,28 +1267,33 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td></td>
+                                
                                 <td style="text-align: right;">TOTAL RECURRENT HT :</td>
                                 <td id="total-ht-prod-price-pdf">0</td>
+                                <td id="total-yr-ht-prod-price-pdf">0</td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td></td>
+                                
                                 <td style="text-align: right;">TVA :</td>
+                                <td>Exonérée</td>
                                 <td>Exonérée</td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td></td>
+                                
                                 <td style="text-align: right;">TOTAL TTC :</td>
                                 <td id="total-prod-price-pdf">0</td>
+                                <td id="total-yr-prod-price-pdf">0</td>
+                            </tr>
                         </tbody>
                     </table>
                     <ul class="mb-3 pl-4 pr-4" style="line-height: 1.5rem; margin-top: 55px; list-style-type: none;">
+                        <li style="padding-bottom: 3px;" class="text-info"><b>Info : </b><span style="font-size: 15px;">Si vous paieriez un abonnement d'une année à la fois, vous bénéficieriez une reduction de 10%.</span></li>
                         <li style="padding-bottom: 3px;"><b>Type de paiement : </b><span style="font-size: 15px;">Virement bancaire / Chèque / Espèces (un timbre de 1% sera rajouté en sus).</span></li>
                         <li style="padding-bottom: 3px;"><b>Modalité de paiement (Option 01): </b><span style="font-size: 15px;">100 % à la commande pour une année, une remise de 5% sera offert pour cette option.
                         </span></li>
@@ -1337,26 +1380,53 @@
         var supp_price = 0;
         var total_price = 0;
 
-        // List Pack Small
+/*         // List Pack Small
 
         var pack_small_detail = Array();
         pack_small_detail["vCore"]=01;
         pack_small_detail["RAM"]=02;
         pack_small_detail["Disk"]=40;
-
+        
         // List Pack Medium
-
+        
         var pack_medium_detail = Array();
         pack_medium_detail["vCore"]=02;
         pack_medium_detail["RAM"]=04;
         pack_medium_detail["Disk"]=80;
-
+        
         // List Pack Large
-
+        
         var pack_large_detail = Array();
         pack_large_detail["vCore"]=04;
         pack_large_detail["RAM"]=08;
-        pack_large_detail["Disk"]=100;
+        pack_large_detail["Disk"]=100; */
+
+        // List Zimbra Basic
+
+        var pack_basic_detail = Array();
+        pack_basic_detail["zdisk"]=01;
+        pack_basic_detail["ztcts"]="";
+        pack_basic_detail["zcal"]="";
+        pack_basic_detail["zmapi"]="";
+        pack_basic_detail["zcnx"]="";
+
+        // List Zimbra Standard
+
+        var pack_standard_detail = Array();
+        pack_standard_detail["zdisk"]=02;
+        pack_standard_detail["ztcts"]="Zimbra Touch Client Tabl/SP";
+        pack_standard_detail["zcal"]="Calendrier";
+        pack_standard_detail["zmapi"]="";
+        pack_standard_detail["zcnx"]="";
+
+        // List Zimbra Pro
+
+        var pack_pro_detail = Array();
+        pack_pro_detail["zdisk"]=05;
+        pack_pro_detail["ztcts"]="Zimbra Touch Client Tabl/SP";
+        pack_pro_detail["zcal"]="Calendrier";
+        pack_pro_detail["zmapi"]="Connecteur Outlook MAPI/Sync Mobile";
+        pack_pro_detail["zcnx"]="Zimbra Connect: Chat/partage écran,fichier";
 
         // List Support Standard 
 
@@ -1391,61 +1461,92 @@
         
         var output_devis_num = document.getElementById("devis-num");
         var output_devis_num_pdf = document.getElementById("devis-num-pdf");
-        // console.log("devis : ", output_devis_num.value)
         output_devis_num_pdf.innerHTML = output_devis_num.value;
 
         
         output_devis_num.oninput = function() {
         output_devis_num_pdf.innerHTML = this.value;
         output_devis_num_pdf.innerHTML = this.value;
-        console.log("devis : ", output_devis_num.value)
         }
 
+                
+        // Client Name
+        
+        var output_client_name = document.getElementById("client-name");
+        var output_client_name_pdf = document.getElementById("client-name-pdf");
+        output_client_name_pdf.innerHTML = output_client_name.value;
 
-        // Estimate Pack VPS Price //
+        
+        output_client_name.oninput = function() {
+        output_client_name_pdf.innerHTML = this.value;
+        output_client_name_pdf.innerHTML = this.value;
+        }
+
+        // Client Address
+        
+        var output_client_address = document.getElementById("client-address");
+        var output_client_address_pdf = document.getElementById("client-address-pdf");
+        output_client_address_pdf.innerHTML = output_client_address.value;
+
+        
+        output_client_address.oninput = function() {
+        output_client_address_pdf.innerHTML = this.value;
+        output_client_address_pdf.innerHTML = this.value;
+        }
+
 
         function onlyOnePack(checkbox) {
             var output_pack_price = document.getElementById("pack-price");
             var checkboxes = document.getElementsByName('pack')
             output_pack_price.innerHTML = costs[checkbox.id];
-
             // Update Pack Info For PDF
-
             var output_pack_price_pdf = document.getElementById("pack-price-pdf");
             output_pack_price_pdf.innerHTML = costs[checkbox.id];
-
             var output_box_price_value_pdf = document.getElementById("box-price-value-pdf")
             output_box_price_value_pdf.innerHTML = costs[checkbox.id];
-
             var output_pack_type_pdf = document.getElementById("pack-type-pdf");
-            output_pack_type_pdf.innerHTML = "Pack " + checkbox.id;
+            // output_pack_type_pdf.innerHTML = "Pack " + checkbox.id;
             
-            var output_pack_cpu_pdf = document.getElementById("pack-cpu-pdf");
-            var output_pack_ram_pdf = document.getElementById("pack-ram-pdf");
-            var output_pack_disk_pdf = document.getElementById("pack-disk-pdf");
+            var output_zimbra_disk_pdf = document.getElementById("zimbra-disk-pdf");
+            var output_zimbra_tcts_pdf = document.getElementById("zimbra-tcts-pdf");
+            var output_zimbra_cal_pdf = document.getElementById("zimbra-cal-pdf");
+            var output_zimbra_mapi_pdf = document.getElementById("zimbra-mapi-pdf");
+            var output_zimbra_cnx_pdf = document.getElementById("zimbra-cnx-pdf");
+
+            /* var output_pack_ram_pdf = document.getElementById("pack-ram-pdf");
+            var output_pack_disk_pdf = document.getElementById("pack-disk-pdf"); */
             
             if (checkbox.id === "small") {
-                output_pack_cpu_pdf.innerHTML = pack_small_detail["vCore"];
-                output_pack_ram_pdf.innerHTML = pack_small_detail["RAM"];
-                output_pack_disk_pdf.innerHTML = pack_small_detail["Disk"];
+                output_zimbra_disk_pdf.innerHTML = pack_basic_detail["zdisk"];
+                output_zimbra_tcts_pdf.innerHTML = pack_basic_detail["ztcts"];
+                output_zimbra_cal_pdf.innerHTML = pack_basic_detail["zcal"];
+                output_zimbra_mapi_pdf.innerHTML = pack_basic_detail["zmapi"];
+                output_zimbra_cnx_pdf.innerHTML = pack_basic_detail["zcnx"];
+                
+                output_pack_type_pdf.innerHTML = "Basic";
             }
-
             if (checkbox.id === "medium") {
-                output_pack_cpu_pdf.innerHTML = pack_medium_detail["vCore"];
-                output_pack_ram_pdf.innerHTML = pack_medium_detail["RAM"];
-                output_pack_disk_pdf.innerHTML = pack_medium_detail["Disk"];
+                output_zimbra_disk_pdf.innerHTML = pack_standard_detail["zdisk"];
+                output_zimbra_tcts_pdf.innerHTML = pack_standard_detail["ztcts"];
+                output_zimbra_cal_pdf.innerHTML = pack_standard_detail["zcal"];
+                output_zimbra_mapi_pdf.innerHTML = pack_standard_detail["zmapi"];
+                output_zimbra_cnx_pdf.innerHTML = pack_standard_detail["zcnx"];
+                
+                output_pack_type_pdf.innerHTML = "Standard";
             }
-
             if (checkbox.id === "large") {
-                output_pack_cpu_pdf.innerHTML = pack_large_detail["vCore"];
-                output_pack_ram_pdf.innerHTML = pack_large_detail["RAM"];
-                output_pack_disk_pdf.innerHTML = pack_large_detail["Disk"];
+                output_zimbra_disk_pdf.innerHTML = pack_pro_detail["zdisk"];
+                output_zimbra_tcts_pdf.innerHTML = pack_pro_detail["ztcts"];
+                output_zimbra_cal_pdf.innerHTML = pack_pro_detail["zcal"];
+                output_zimbra_mapi_pdf.innerHTML = pack_pro_detail["zmapi"];
+                output_zimbra_cnx_pdf.innerHTML = pack_pro_detail["zcnx"];
+                
+                output_pack_type_pdf.innerHTML = "Professionnel";
             }
             
             output_pack_price_pdf.innerHTML = costs[checkbox.id];
             
             //
-
             pack_price = costs[checkbox.id]
             checkboxes.forEach((item) => {
                 if (item !== checkbox) item.checked = false
@@ -1651,6 +1752,13 @@
 
             var output_total_price_pdf = document.getElementById("total-prod-price-pdf");
             output_total_price_pdf.innerHTML = total_price
+
+            var output_total_yr_ht_price_pdf = document.getElementById("total-yr-ht-prod-price-pdf");
+            output_total_yr_ht_price_pdf.innerHTML = total_price * 12
+
+            var discount = Math.round(total_price * 12 * 0.10)
+            var output_total_yr_price_pdf = document.getElementById("total-yr-prod-price-pdf");
+            output_total_yr_price_pdf.innerHTML = total_price * 12 - discount + ' (-10%)'
 
             //
         }

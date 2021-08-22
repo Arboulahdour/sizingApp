@@ -13,7 +13,7 @@
       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
       crossorigin="anonymous"
     />
-    <title>Authentications</title>
+    <title>Connexion</title>
     <style>
       body {
         margin: 0;
@@ -130,9 +130,9 @@
   </head>
 
   <body>
-
+    <br/>
     <div class="container mb-5" style="margin-top: 50px">
-      <h1 class="text-center p-3 text-white">Login</h1>
+      <h1 class="text-center p-3 text-white" style="margin-top: 50px">Connexion</h1>
       <div
         style="margin: 0 auto; width: 80%;"
         class="p-1 form-box"
@@ -147,7 +147,7 @@
               class="alert alert-danger alert-dismissible fade show"
               role="alert"
             >
-              <strong> Error </strong>
+              <strong> Erreur: </strong>
               <%= error %>.
               <button
                 type="button"
@@ -159,14 +159,14 @@
           <% } %>
           <% if( error_messages !="" ){ %>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <strong> Error </strong>
+                <strong> Erreur: </strong>
                 <%= error_messages %>.
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
           <% } %>
           <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
           <div class="mb-3 mt-3">
-            <label for="username">Enter Your Email</label>
+            <label for="username">Entrer votre Email</label>
             <input
               type="email"
               class="form-control form-control-lg"
@@ -177,7 +177,7 @@
             />
           </div>
           <div class="mb-3">
-            <label for="password">Enter Your Password</label>
+            <label for="password">Entrer votre Password</label>
             <input
               type="password"
               class="form-control form-control-lg"
@@ -191,14 +191,14 @@
             <input
               type="submit"
               class="btn btn-lg btn-block"
-              value="Login"
+              value="Se connecter"
             />
           </div>
-          <p class="text-white">New here? <a class="card-link text-warning" href="/signup">Register Now</a></p>
+          <p class="text-white">Nouveau içi? <a class="card-link text-warning" href="/signup">Inscrivez-vous maintenant</a></p>
           <!-- added a new button for redirecting to forgot password page  -->
           <p>
             <a class="card-link text-warning" href="/user/forgot-password"
-              >Forgot Password</a
+              >Mot de passe oublié ?</a
             >
           </p>
         </form>

@@ -12,7 +12,7 @@ function checkAuth(req, res, next) {
         res.set('Cache-Control', 'no-cache, private, no-store, must-revalidate, post-check=0, pre-check=0');
         next();
     } else {
-        req.flash('error_messages', "Please Login to continue !");
+        req.flash('error_messages', "SVP, connecter pour continuer !");
         res.redirect('/login');
     }
 }
@@ -38,9 +38,9 @@ router.post('/signup', (req, res) => {
     const { email, username, password, confirmpassword } = req.body;
     // check if they are empty 
     if (!email || !username || !password || !confirmpassword) {
-        res.render("signup", { err: "All Fields Required !", csrfToken: req.csrfToken() });
+        res.render("signup", { err: "Tous les champs sont obligatoires !", csrfToken: req.csrfToken() });
     } else if (password != confirmpassword) {
-        res.render("signup", { err: "Password Don't Match !", csrfToken: req.csrfToken() });
+        res.render("signup", { err: "Mot de passe ne correspond pas !", csrfToken: req.csrfToken() });
     } else {
 
         // validate email and username and password 
@@ -49,7 +49,7 @@ router.post('/signup', (req, res) => {
         user.findOne({ $or: [{ email: email }, { username: username }] }, function (err, data) {
             if (err) throw err;
             if (data) {
-                res.render("signup", { err: "User Exists, Try Logging In !", csrfToken: req.csrfToken() });
+                res.render("signup", { err: "Cet utilisateur est déja créé, essayer de connecter !", csrfToken: req.csrfToken() });
             } else {
                 // generate a salt
                 bcryptjs.genSalt(12, (err, salt) => {
@@ -102,12 +102,12 @@ router.get('/dashboard', checkAuth, async (req, res) => {
 
 router.get('/vps-offer-gen', async (req, res) => {
     // quering offers and adding a new parameter for checking verification
-    res.render('vps-offer-gen'); // , { email: req.user.email }
+    res.render('vps-offer-gen', { email: req.user.email }); // , { email: req.user.email }
 });
 
 router.get('/zimbra-offer-gen', async (req, res) => {
     // quering offers and adding a new parameter for checking verification
-    res.render('zimbra-offer-gen');
+    res.render('zimbra-offer-gen', { email: req.user.email });
 });
 
 router.use(userRoutes);

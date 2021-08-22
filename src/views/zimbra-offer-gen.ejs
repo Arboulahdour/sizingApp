@@ -751,6 +751,27 @@
         max-width: 120px;
     }
     }
+
+ .btn-primary:disabled {
+     color: #fff;
+ }
+
+
+ .spinner-button i {
+     color: #fff
+ }
+
+ .spinner-button:hover i {
+     color: #fff
+ }
+
+ .fa {
+     color: #fff
+ }
+
+ .fa:hover {
+     color: #fff
+ }
       
 
     /* General Styles */
@@ -1095,7 +1116,7 @@
                         <div>
                             <select class="custom-select mr-sm-2 bg-primary range-slider__list_price_total" id="term-select" onchange="checkTermeUpdate()">
                               <option id="price-month" selected value="1">Mensuel</option>
-                              <option id="price-six-months" value="6">06 Mois</option>
+                              <!-- <option id="price-six-months" value="6">06 Mois</option> -->
                               <option id="price-year" value="12">Annuelle</option>
                             </select>
                           </div>
@@ -1151,7 +1172,7 @@
                                 <li style="font-size: 13px;"><b>AI: </b>16500658016</li>
                                 <li style="font-size: 13px;"><b>RIB: </b>032 00001 4305801208 93</li>
                                 <li style="font-size: 13px;"><b>Banque: </b>AGB</li>
-                                <li style="font-size: 13px;"><b>Contact: </b><a href="abderrahmane.bouladour@adextechnology.dz"> abderrahmane.boulahdour@adextechnology.dz </a></li>
+                                <li style="font-size: 13px;"><b>Contact: </b><a href="mailto:<%= email %>"> <%= email %> </a></li>
                             </ul>
                         </div>
             
@@ -1180,11 +1201,11 @@
                                         <li>0<span id="zimbra-disk-pdf">1</span> Go de Stockage</li>
                                         <li>Messagerie POP, IMAP, SMTP</li>
                                         <li>Contact / Taches / Client Web Mobile.</li>
-                                        <li><span id="zimbra-tcts-pdf"></span></li>
-                                        <li><span id="zimbra-cal-pdf"></span></li>
-                                        <li><span id="zimbra-mapi-pdf"></span></li>
-                                        <li><span id="zimbra-cnx-pdf"></span></li>
                                         <li>Antivirus</li>
+                                        <li><span id="zimbra-tcts-pdf">---</span></li>
+                                        <li><span id="zimbra-cal-pdf">---</span></li>
+                                        <li><span id="zimbra-mapi-pdf">---</span></li>
+                                        <li><span id="zimbra-cnx-pdf">---</span></li>
                                     </ul>
                                 </td>
                                 <td id="pack-price-pdf">200</td>
@@ -1223,7 +1244,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <br/><br/>
+                    <br/><br/><br/>
                     <h4 class="mb-2 mt-3">Support : </h4>
                     <table class="table">
                         <thead class="bg-primary text-white">
@@ -1238,7 +1259,7 @@
                                 <td colspan="2">
                                     <ul style="list-style-type: none; line-height: 1.5rem; text-align: left;">
                                         <li>Ouverture de ticket : 24h*7j*365</li> 
-                                        <li>Résolution de l'incident : <span id="supp-ri-pdf">8h30 – 19h00 GMT 5jr</span></li>
+                                        <li>Résolution de l'incident : <span id="supp-ri-pdf">8h30–19h00 GMT 5j</span></li>
                                         <li>GTC1 : 1 heure</li>
                                         <li>GTR : <span id="supp-gtr-pdf">Best effort</span></li>
                                         <li>Pénalités : Sévérité 1 - 24h*7j*365</li>
@@ -1405,10 +1426,10 @@
 
         var pack_basic_detail = Array();
         pack_basic_detail["zdisk"]=01;
-        pack_basic_detail["ztcts"]="";
-        pack_basic_detail["zcal"]="";
-        pack_basic_detail["zmapi"]="";
-        pack_basic_detail["zcnx"]="";
+        pack_basic_detail["ztcts"]="---";
+        pack_basic_detail["zcal"]="---";
+        pack_basic_detail["zmapi"]="---";
+        pack_basic_detail["zcnx"]="---";
 
         // List Zimbra Standard
 
@@ -1416,8 +1437,8 @@
         pack_standard_detail["zdisk"]=02;
         pack_standard_detail["ztcts"]="Zimbra Touch Client Tabl/SP";
         pack_standard_detail["zcal"]="Calendrier";
-        pack_standard_detail["zmapi"]="";
-        pack_standard_detail["zcnx"]="";
+        pack_standard_detail["zmapi"]="---";
+        pack_standard_detail["zcnx"]="---";
 
         // List Zimbra Pro
 
@@ -1801,16 +1822,19 @@
 
         checkTerme()
 
+        var loading = false
+
         function generatePDF() {
             // Choose the element that our invoice is rendered in.
+            var loading = true;
             const element = document.getElementById("invoice");
             // Choose the element and save the PDF for our user.
             // html2pdf()
                 // .from(element)
                 // .save();
             html2pdf(element, {
-                margin:       10,
-                filename:     'invoice_template.pdf',
+                margin:       8,
+                filename:     'offre tecnico-comerciale zimbra-cloud.pdf',
                 image:        { type: 'jpg', quality: 0.99 },
                 html2canvas:  { scale: 1, logging: true, dpi: 192, letterRendering: true },
                 jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }

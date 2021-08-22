@@ -7,14 +7,14 @@ module.exports = function (passport) {
         user.findOne({ email: email }, (err, data) => {
             if (err) throw err;
             if (!data) {
-                return done(null, false, { message: "User Doesn't Exist !" });
+                return done(null, false, { message: "L'utilisateur n'exist pas !" });
             }
             bcryptjs.compare(password, data.password, (err, match) => {
                 if (err) {
                     return done(null, false);
                 }
                 if (!match) {
-                    return done(null, false, { message: "Password Doesn't match !" });
+                    return done(null, false, { message: "Le mot de passe n'est pas correct" });
                 }
                 if (match) {
                     return done(null, data);

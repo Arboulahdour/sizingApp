@@ -379,6 +379,14 @@
         min-height: 270px;
         padding: 5px 25px 5px 25px;
     }
+    .estimate-backup {
+        margin-bottom: 0;
+        margin: 20px auto;
+        border: 2px solid #d7dcdf;
+        border-radius: 10px;
+        min-height: 90px;
+        padding: 5px 25px 5px 25px;
+    }
     .estimate-support {
         margin-bottom: 0;
         margin: 20px auto;
@@ -930,6 +938,19 @@
                 </div>
             </div>
 
+            <div class="col-md-12 estimate-backup">
+                
+                <div class="range-slider-arr d-flex justify-content-end">
+                    <span class="range-slider__type_net"><input type="checkbox" id="backup-add" class="mr-2" /> Backup disk <i class="fas fa-question-circle cursor-help mr-1" data-toggle="tooltip" data-placement="top" title="Par défaut, une seul adresse IP est offerte avec le VPS avec 0 DZD. Mais vous pouvez ajouter d'autres adresses IP ici !"></i></span>
+                    <!-- <span id="ip-add" class="range-slider__value bg-success cursor"><i class="fa fa-plus" aria-hidden="true"></i></span> -->
+                    <div class="d-flex">
+                        <span id="backup-disk-price" class="range-slider__value_price_net">0</span>
+                        <span class="range-slider__value_currency">DZD</span>
+                    </div>
+                </div>
+
+            </div>
+
             <h3 class="col-md-12 custom-title"><i class="fas fa-network-wired mr-2"></i> Extension Réseau :</h3>
             <div class="col-md-12 estimate-network">
                 <div class="range-slider d-flex">
@@ -1093,7 +1114,7 @@
                         <div>
                             <select class="custom-select mr-sm-2 bg-primary range-slider__list_price_total" id="term-select" onchange="checkTermeUpdate()">
                               <option id="price-month" selected value="1">Mensuel</option>
-                              <option id="price-six-months" value="6">06 Mois</option>
+                              <!--<option id="price-six-months" value="6">06 Mois</option>-->
                               <option id="price-year" value="12">Annuelle</option>
                             </select>
                           </div>
@@ -1149,7 +1170,7 @@
                                 <li style="font-size: 13px;"><b>AI: </b>16500658016</li>
                                 <li style="font-size: 13px;"><b>RIB: </b>032 00001 4305801208 93</li>
                                 <li style="font-size: 13px;"><b>Banque: </b>AGB</li>
-                                <li style="font-size: 13px;"><b>Contact: </b><a href="abderrahmane.bouladour@adextechnology.dz"> abderrahmane.boulahdour@adextechnology.dz </a></li>
+                                <li style="font-size: 13px;"><b>Contact: </b><a href="mailto:<%= email %>"> <%= email %> </a></li>
                             </ul>
                         </div>
             
@@ -1187,7 +1208,7 @@
                         </tbody>
                     </table>
                     
-                    <h4 class="mb-2">Extension serveur : </h4>
+                    <h4 class="mb-2">Extension VPS : </h4>
                     <table class="table">
                         <thead class="bg-primary text-white">
                             <tr>
@@ -1236,7 +1257,26 @@
                             </tr>
                         </tbody>
                     </table>
-                    <h4 class="mb-2 mt-5">Support : </h4>
+                    <h4 class="mb-2" style="margin-top: 2rem !important;">Backup de stockage : </h4>
+                    <table class="table">
+                        <thead class="bg-primary text-white">
+                            <tr>
+                            <th>Backup</th>
+                            <th>Quantitée de stockage VPS</th>
+                            <th>Prix unit (DZD)</th>
+                            <th>Prix (DZD)/mois</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Disk (Backup)</td>
+                                <td>Disk VPS + Ext</td>
+                                <td>x 25</td>
+                                <td id="disk-backup-price-pdf">0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h4 class="mb-2 mt-2">Support : </h4>
                     <table class="table">
                         <thead class="bg-primary text-white">
                             <tr>
@@ -1261,8 +1301,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <br/>
-                    <h4 class="mb-2 mt-2">Estimation totale : </h4>
+                    <h4 class="mb-2">Estimation totale : </h4>
                     <table class="table">
                         <thead class="bg-primary text-white">
                             <tr>
@@ -1304,7 +1343,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <ul class="mb-3 pl-4 pr-4" style="line-height: 1.5rem; margin-top: 55px; list-style-type: none;">
+                    <ul class="mb-1 pl-4 pr-4" style="line-height: 1.5rem; margin-top: 45px; list-style-type: none;">
                         <li style="padding-bottom: 3px;" class="text-info"><b>Info : </b><span style="font-size: 15px;">Si vous paieriez un abonnement d'une année à la fois, vous bénéficieriez une reduction de 10%.</span></li>
                         <li style="padding-bottom: 3px;"><b>Type de paiement : </b><span style="font-size: 15px;">Virement bancaire / Chèque / Espèces (un timbre de 1% sera rajouté en sus).</span></li>
                         <li style="padding-bottom: 3px;"><b>Modalité de paiement : </b><span style="font-size: 15px;">100 % à la commande.</span></li>
@@ -1377,10 +1416,10 @@
         costs["small"]=3900;
         costs["medium"]=6500;
         costs["large"]=12500;
-        costs["vcpu"]=1000;
+        costs["vcpu"]=2500;
         costs["ram"]=800;
         costs["disk"]=25;
-        costs["speed"]=800;
+        costs["speed"]=15600;
         costs["ip"]=800;
         costs["fw"]=800;
         costs["standard"]=0;
@@ -1397,6 +1436,7 @@
         var speed_price = 0;
         var ip_price = 0;
         var fw_price = 0;
+        var disk_backup_price = 0;
         var supp_price = 0;
         var total_price = 0;
 
@@ -1635,6 +1675,7 @@
         //
 
         disk_price = this.value * costs['disk'];
+        backupDisk()
         totalPrice()
         checkTermeUpdate()
         }
@@ -1796,6 +1837,47 @@
             }
         };
 
+
+        function backupDisk() {
+    
+        var output_disk_backup_price_pdf = document.getElementById("disk-backup-price-pdf");
+        var output_backup_price = document.getElementById("backup-disk-price");
+        var checkbox = document.getElementById('backup-add')
+
+        if(checkbox.checked) {
+        if (pack_price == "3900") {
+            disk_backup_price = 40 * 25 + disk_price
+            console.log("backup disk price : ", disk_backup_price)
+            output_backup_price.innerHTML = disk_backup_price
+            output_disk_backup_price_pdf.innerHTML = disk_backup_price
+        }
+        if (pack_price == "6500") {
+            disk_backup_price = 80 * 25 + disk_price
+            console.log("backup disk price : ", disk_backup_price)
+            output_backup_price.innerHTML = disk_backup_price
+            output_disk_backup_price_pdf.innerHTML = disk_backup_price
+        }
+        if (pack_price == "12500") {
+            disk_backup_price = 100 * 25 + disk_price
+            console.log("backup disk price : ", disk_backup_price)
+            output_backup_price.innerHTML = disk_backup_price
+            output_disk_backup_price_pdf.innerHTML = disk_backup_price
+        }
+        } else {
+            disk_backup_price = 0
+            output_backup_price.innerHTML = disk_backup_price
+            output_disk_backup_price_pdf.innerHTML = disk_backup_price
+        }
+        checkbox.oninput = function() {
+            output_backup_price.innerHTML = this.value;
+            output_disk_backup_price_pdf.innerHTML = this.value
+
+        totalPrice()
+        checkTermeUpdate()
+        }
+
+        }
+
         // Estimate Support Price
 
         function onlyOne(checkbox) {
@@ -1855,7 +1937,8 @@
         totalPrice()
         
         function totalPrice(){
-            total_price = pack_price + vcpu_price + ram_price + disk_price + speed_price + ip_price + fw_price + supp_price;
+            backupDisk()
+            total_price = pack_price + vcpu_price + ram_price + disk_price + speed_price + ip_price + fw_price + disk_backup_price + supp_price;
             console.log('Total Price: ',total_price)
             var output_total_price = document.getElementById("total-prod-price");
             output_total_price.innerHTML = total_price
@@ -1925,7 +2008,7 @@
                 // .save();
             html2pdf(element, {
                 margin:       8,
-                filename:     'invoice_vps_template.pdf',
+                filename:     'offre tecnico-comerciale vps-cloud.pdf',
                 image:        { type: 'jpg', quality: 0.99 },
                 html2canvas:  { scale: 1, logging: true, dpi: 192, letterRendering: true },
                 jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }

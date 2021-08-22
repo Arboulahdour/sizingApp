@@ -1,6 +1,7 @@
 const crypto = require('crypto');
 const resetToken = require('../models/resetTokens');
 const user = require('../models/User');
+const Offer = require('../models/Offer');
 const mailer = require('./sendMail');
 const bcryptjs = require('bcryptjs');
 
@@ -20,7 +21,8 @@ exports.sendVerificationEmail = async (req, res) => {
         await resetToken({ token: token, email: req.user.email }).save();
         // send an email for verification
         mailer.sendVerifyEmail(req.user.email, token);
-        res.render('dashboard', { username: req.user.username, verified: req.user.isVerified, emailsent: true });
+        const offers = await Offer.find({}).lean()
+        res.render('dashboard', { username: req.user.username, verified: req.user.isVerified, emailsent: true, offers : offers });
     }
 };
 
@@ -41,7 +43,7 @@ exports.verifyEmail = async (req, res) => {
             await resetToken.findOneAndDelete({ token: token });
             res.redirect('/dashboard');
         } else {
-            res.render('dashboard', { username: req.user.username, verified: req.user.isVerified, err: "Invalid token or Token has expired, Try again." });
+            res.render('dashboard', { username: req.user.username, verified: req.user.isVerified, err: "Token invalide ou expiré, réessayer." });
         }
     } else {
         // doesnt have a token
@@ -73,9 +75,9 @@ exports.postForgotPassword =  async (req, res) => {
         // send an email for verification
         mailer.sendResetEmail(email, token);
 
-        res.render('forgot-password.ejs', { csrfToken: req.csrfToken(), msg: "Reset email sent. Check your email for more info.", type: 'success' });
+        res.render('forgot-password.ejs', { csrfToken: req.csrfToken(), msg: "Réinitialisation d'email envoyée. Vérifer votre boite pour plus d'infos.", type: 'success' });
     } else {
-        res.render('forgot-password.ejs', { csrfToken: req.csrfToken(), msg: "No user Exists with this email.", type: 'danger' });
+        res.render('forgot-password.ejs', { csrfToken: req.csrfToken(), msg: "Aucun utilisateur avec cet email est trouvé.", type: 'danger' });
 
     }
 };
@@ -94,7 +96,7 @@ exports.getResetPassword = async (req, res) => {
             // sending token too to grab email later
             res.render('forgot-password.ejs', { csrfToken: req.csrfToken(), reset: true, email: check.email });
         } else {
-            res.render('forgot-password.ejs', { csrfToken: req.csrfToken(), msg: "Token Tampered or Expired.", type: 'danger' });
+            res.render('forgot-password.ejs', { csrfToken: req.csrfToken(), msg: "Token Trafiqué or Expiré.", type: 'danger' });
         }
     } else {
         // doesnt have a token
@@ -110,7 +112,7 @@ exports.postResetPassword = async (req, res) => {
     console.log(password);
     console.log(password2);
     if (!password || !password2 || (password2 != password)) {
-        res.render('forgot-password.ejs', { csrfToken: req.csrfToken(), reset: true, err: "Passwords Don't Match !", email: email });
+        res.render('forgot-password.ejs', { csrfToken: req.csrfToken(), reset: true, err: "Mot de passe ne correspond pas !", email: email });
     } else {
         // encrypt the password
         var salt = await bcryptjs.genSalt(12);
@@ -119,7 +121,7 @@ exports.postResetPassword = async (req, res) => {
             await user.findOneAndUpdate({ email: email }, { $set: { password: hash } });
             res.redirect('/login');
         } else {
-            res.render('forgot-password.ejs', { csrfToken: req.csrfToken(), reset: true, err: "Unexpected Error Try Again", email: email });
+            res.render('forgot-password.ejs', { csrfToken: req.csrfToken(), reset: true, err: "Erreur unattendu, réessayer", email: email });
 
         }
     }

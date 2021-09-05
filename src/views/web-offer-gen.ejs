@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <!-- Required meta tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Sizing offres Zimbra</title>
+  <title>Sizing offres Web Hosting</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/0.5.0/sweet-alert.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <style>
     body {
         margin : 0 !important;
@@ -160,7 +164,8 @@
         position: relative;
         background:#212531;
         background: linear-gradient(to right bottom, #2f3441 50%, #212531 50%);
-    padding-top: 1em;
+        padding-top: 1em;
+        width: 220px;
     }
     .sidebar-brand a {
         color: #ddd;
@@ -391,6 +396,15 @@
         padding: 0;
     }
 
+    .estimate-mgservice {
+        margin-bottom: 0;
+        margin: 20px auto;
+        border: 2px solid #d7dcdf;
+        border-radius: 10px;
+        min-height: 90px;
+        padding: 5px 25px 5px 25px;
+    }
+
     .estimate-support-price {
         margin-bottom: 0;
         margin: 20px auto;
@@ -457,6 +471,17 @@
         outline: none;
         padding: 0;
         margin: 15px 0 15px 0;
+    }
+    .range-slider__type_mgs {
+        display: inline-block;
+        width: 250px;
+        color: #fff;
+        line-height: 20px;
+        text-align: center;
+        border-radius: 3px;
+        background: #2374bb;
+        padding: 10px 10px;
+        margin-right: 8px;
     }
     .range-slider__range::-webkit-slider-thumb {
         appearance: none;
@@ -740,17 +765,116 @@
         max-width: 230px;
     }
 
-    @media (max-width: 400px) {
+    @media (max-width: 480px) {
         .devis-input-style {
         max-width: 120px;
     }
-        .address-input-style {
-        max-width: 120px;
+
+        .client-input-style {
+        max-width: 120px;    
     }
         .address-input-style {
-        max-width: 120px;
+        max-width: 150px;
     }
     }
+
+    @media (max-width: 400px) {
+        .devis-input-style {
+        max-width: 110px;
+    }
+        .address-input-style {
+        max-width: 140px;
+    }
+    }
+
+    @media (max-width: 600px) {
+        .display-pdf-btn {
+            font-size: 10px;
+    }
+        h2 {
+            font-size: 30px;
+    }
+
+        h3 {
+            font-size: 24px;
+    }
+
+        h5 {
+            font-size: 18px;
+    }
+
+
+    }
+
+    @media (max-width: 472px) {
+        .display-pdf-btn {
+            font-size: 9px;
+            padding-left: 1.5px;
+            padding-right: 1.5px;
+        }
+        h3 {
+            font-size: 22px;
+    }
+
+    }
+
+    @media (max-width: 410px) {
+        .display-pdf-btn {
+            font-size: 7px;
+            padding-left: 1px;
+            padding-right: 1px;
+    }
+        h3 {
+            font-size: 18px;
+    }
+
+    }
+
+ .btn-primary:disabled {
+     color: #fff;
+ }
+
+
+ .spinner-button i {
+     color: #fff
+ }
+
+ .spinner-button:hover i {
+     color: #fff
+ }
+
+ .fa {
+     color: #fff
+ }
+
+ .fa:hover {
+     color: #fff
+ }
+
+    .swal-title {
+        color: black;
+        letter-spacing: 0.05rem;
+    }
+
+    .swal-text {
+        /*background-color: #FEFAE3;*/
+        padding: 17px;
+        /*border: 1px solid #F0E1A1;*/
+        display: block;
+        margin: 22px;
+        text-align: center;
+        letter-spacing: 0.05rem;
+        line-height: 1.5rem;
+        /*color: #61534e;*/
+        color: black; 
+    }
+
+    .swal-button {
+        background: #2374bb;
+        letter-spacing: 0.05rem;
+    }
+
+
       
 
     /* General Styles */
@@ -780,6 +904,18 @@
 
 <body>
 
+    <script type="text/javascript">
+        function sweetAlert(){
+            swal({
+                title: "Remarque..",
+                text: "La page actuelle est un peu chargée, veuillez patienter jusqu'au chargement complet de la page. Merci !",
+                icon: "info",
+                button: "Compris"
+            });
+        }
+        sweetAlert();
+    </script>
+
     <div id="wrapper">
       <div class="overlay"></div>
        
@@ -791,12 +927,14 @@
               <a href="/">Adex Cloud</a>
             </div>
           </div>
-          <li><a href="/dashboard">Tableau de board</a></li>
-          <li><a href="/vps-offer-gen">Offre VPS</a></li>
-          <li><a href="/zimbra-offer-gen">Offre Zimbra</a></li>
-          <li><a href="#team">Offre Web</a></li>
-         <li><a href="/logout">Deconnecter</a></li>
-         </ul>
+          <li><a href="/dashboard"><i class="fa fa-tachometer-alt mr-2"></i>Tableau de board</a></li>
+          <li><a href="/vps-offer-gen"><i class="fa fa-server mr-2"></i>Offre VPS Cloud</a></li>
+          <li><a href="/zimbra-offer-gen"><i class="fa fa-mail-bulk mr-2"></i>Offre Zimbra Cloud</a></li>
+          <li><a href="/web-offer-gen"><i class="fa fa-globe mr-2"></i>Offre Web Hosting</a></li>
+          <li><a href="/eboutik-offer-gen"><i class="fa fa-shopping-cart mr-2"></i>Offre E-Boutik</a></li>
+          <li><a href="/web-email-offer-gen"><i class="fa fa-envelope mr-2"></i>Offre Web Email</a></li>
+          <li><a href="/logout"><i class="fa fa-sign-out-alt mr-2"></i>Déconnecter</a></li>
+        </ul>
     </nav>
     <!-- /#sidebar-wrapper -->
 
@@ -809,8 +947,8 @@
         </button>
         <div class="container">
         <div class="col-md-12 d-flex justify-content-between p-0" style="margin-top: 0px; margin-bottom: 20px;">
-            <h2 class="text-left text-white">Offre Messagerie Zimbra</h2>
-            <h4 class="text-right text-white">Devis N°: <input type="text" id="devis-num" class="devis-input-style ml-1" /></h4>
+            <h2 class="text-left text-white">Offre Web Hosting</h2>
+            <h4 class="text-left text-white">Devis N°: <input type="text" id="devis-num" class="devis-input-style ml-1" /></h4>
         </div>
         <hr style="background: white; margin-bottom: 30px;"/>
         <div class="col-md-12 d-flex p-0" style="margin-top: 0px; margin-bottom: 20px;">
@@ -818,92 +956,68 @@
             <h5 class="text-white">Adresse: <input type="text" id="client-address" class="address-input-style ml-1" /></h5>
         </div>
         <hr style="background: white; margin-bottom: 30px;"/>
-        <h3 class="col-md-12 custom-title"><i class="fa fa-server mr-2" aria-hidden="true"></i> Solutions Zimbra :</h3>
-        <div class="row col-md-12 estimate-support">
-                <div class="col-sm-4 mb-5">
+        <h3 class="col-md-12 custom-title"><i class="fa fa-server mr-2" aria-hidden="true"></i> Pack Web :</h3>
+        <div class="row col-md-10 estimate-support">
+                <div class="col-sm-6 mb-5">
                     <div class="card">
                         <div class="card-body">
                             <label class="myCheckbox">
                                 <input type="checkbox" name="pack" id="small" onchange="onlyOnePack(this)" checked/>
                                 <span></span>
                             </label>
-                        <h5 class="card-title" style="text-align: center;">BASIC</h5>
+                        <h5 class="card-title" style="text-align: center;">PACK S Web</h5>
                         <div style="text-align: center; padding-top: 20px; padding-bottom: 20px;">
-                            <img src='img/zimbra.svg' height="150px" width="100%"/>
+                            <img src='img/web.svg' height="150px" width="100%"/>
                         </div>
                         <p class="card-text">
                             <ul style="list-style-type: none; padding: 0; line-height: 1.8rem; text-align: center;">
-                                <li>01 GO Stockage</li>
-                                <li>Messagerie POP, IMPA, SMTP</li>
-                                <li>CONTACT</li>
-                                <li>TACHES</li>
-                                <li>Client Web Mobile</li>
-                                <li>Antivirus</li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
+                                <li>Site Web 01</li>
+                                <li>Nom de domaine .DZ Inclus</li>
+                                <li>Sous Domaine 20</li>
+                                <li>Espace Disque 500 Mo</li>
+                                <li>Gestion DNS</li>
+                                <li>Base de Donnée 01</li>
+                                <li>Transfert de domaine</li>
+                                <li>Comptes FTP 10</li>
+                                <li>Comptes E-Mail: 10</li>
+                                <li>Alias E-mail : 20</li>
+                                <li>Cpanel</li>
+                                <li>Trafic: Illimité</li>
+                                <li>Anti Spam</li>
+                                <li>Anti Virus</li>
                             </ul>
                         </p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="col-sm-4 mb-5">
+                <div class="col-sm-6 mb-5">
                     <div class="card">
                     <div class="card-body">
                         <label class="myCheckbox">
                             <input type="checkbox" name="pack" id="medium" onchange="onlyOnePack(this)"/>
                             <span></span>
                         </label>
-                        <h5 class="card-title" style="text-align: center;">STANDARD</h5>
+                        <h5 class="card-title" style="text-align: center;">PACK L Web</h5>
                         <div style="text-align: center; padding-top: 20px; padding-bottom: 20px;">
-                            <img src='img/zimbra.svg' height="150px" width="100%"/>
+                            <img src='img/web.svg' height="150px" width="100%"/>
                         </div>
                         <p class="card-text">
                         <ul style="list-style-type: none; padding: 0; line-height: 1.8rem; text-align: center;">
-                            <li>02 GO Stockage</li>
-                            <li>Messagerie POP, IMPA, SMTP</li> 
-                            <li>Zimbra Touch Client Tablette et smartphone</li>
-                            <li>CONTACT</li>
-                            <li>TACHES</li>
-                            <li>Client Web Mobile</li>
-                            <li>Antivirus</li>
-                            <li>Calendrier</li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                        </p>
-                    </div>
-                    </div>
-                </div>
-                
-                <div class="col-sm-4 mb-5">
-                    <div class="card">
-                    <div class="card-body">
-                        <label class="myCheckbox">
-                            <input type="checkbox" name="pack" id="large" onchange="onlyOnePack(this)"/>
-                            <span></span>
-                        </label>
-                        <h5 class="card-title" style="text-align: center;">PROFFESIONNEL</h5>
-                        <div style="text-align: center; padding-top: 20px; padding-bottom: 20px;">
-                            <img src='img/zimbra.svg' height="150px" width="100%"/>
-                        </div>
-                        <p class="card-text">
-                        <ul style="list-style-type: none; padding: 0; line-height: 1.8rem; text-align: center;">
-                            <li>05 GO Stockage</li>
-                            <li>Messagerie POP, IMPA, SMTP</li> 
-                            <li>Connecteur Outlook MAPI</li>
-                            <li>Synchronisation Mobile</li>
-                            <li>Zimbra Connect : Chat, partage d’écran et de fichier</li>
-                            <li>CONTACT</li>
-                            <li>TACHES</li>
-                            <li>Client Web Mobile</li>
-                            <li>Zimbra Touch Client Tablette et smartphone</li>
-                            <li>Antivirus</li>
-                            <li>Calendrier</li>
+                            <li>Site Web 01</li>
+                            <li>Nom de domaine .DZ Inclus</li>
+                            <li>Sous Domaine 50</li>
+                            <li>Espace Disque 01 Go</li>
+                            <li>Gestion DNS</li>
+                            <li>Base de Donnée 02</li>
+                            <li>Transfert de domaine</li>
+                            <li>Comptes FTP 20</li>
+                            <li>Comptes E-Mail: 20</li>
+                            <li>Alias E-mail : 50</li>
+                            <li>Cpanel</li>
+                            <li>Trafic: Illimité</li>
+                            <li>Anti Spam</li>
+                            <li>Anti Virus</li>
                         </ul>
                         </p>
                     </div>
@@ -912,27 +1026,15 @@
             </div>
             <div class="col-md-12 estimate-support-price">
                 <div class="range-slider-arr d-flex justify-content-end">
-                    <span class="range-slider__type_supp" style="background: none;">Prix de la solution: <span style="font-size: 10px;">(Boite)</span></span>
+                    <span class="range-slider__type_supp" style="background: none;">Prix de la solution: </span>
                     <div class="d-flex">
-                        <span id="pack-price" class="range-slider__value_price_supp">200</span>
+                        <span id="pack-price" class="range-slider__value_price_supp">150</span>
                         <span class="range-slider__value_currency">DZD</span>
                     </div>
                 </div>    
             </div>
 
-            <h3 class="col-md-12 custom-title"><i class="fa fa-inbox mr-2" aria-hidden="true"></i> Boites Zimbra : </h3>
-            <div class="col-md-12 estimate-hardware">
-                  
-                <div class="range-slider d-flex">
-                    <span class="range-slider__type">Boite</span>
-                    <input id="box-range" class="range-slider__range" type="range" value="0" min="0" max="4096" step="1">
-                    <span id="box-value" class="range-slider__value">0</span>
-                    <span id="box-price" class="range-slider__value_price">0</span>
-                    <span class="range-slider__value_currency">DZD</span>
-                </div>
-            </div>
-
-            <h3 class="col-md-12 custom-title"><i class="fa fa-server mr-2" aria-hidden="true"></i> Extension Zimbra : </h3>
+            <h3 class="col-md-12 custom-title"><i class="fa fa-server mr-2" aria-hidden="true"></i> Extension Web : </h3>
             <!-- <div class="col-md-12 estimate-hardware">
                   
                 <div class="range-slider d-flex">
@@ -954,7 +1056,7 @@
                 </div>
                 
                 <div class="range-slider-arr d-flex justify-content-end">
-                    <span class="range-slider__type_net"><input type="checkbox" id="backup-add" class="mr-2" /> Backup disk <i class="fas fa-question-circle cursor-help mr-1" data-toggle="tooltip" data-placement="top" title="Par défaut, une seul adresse IP est offerte avec le VPS avec 0 DZD. Mais vous pouvez ajouter d'autres adresses IP ici !"></i></span>
+                    <span class="range-slider__type_net"><input type="checkbox" id="backup-add" class="mr-2" /> Backup disk <i class="fas fa-question-circle cursor-help mr-1" data-toggle="tooltip" data-placement="top" title="Le backup de disque regroupe la taille du disque Pack + la taille de disque supplémentaire"></i></span>
                     <!-- <span id="ip-add" class="range-slider__value bg-success cursor"><i class="fa fa-plus" aria-hidden="true"></i></span> -->
                     <div class="d-flex">
                         <span id="backup-disk-price" class="range-slider__value_price_net">0</span>
@@ -964,6 +1066,45 @@
 
             </div>
 
+            <div class="col-md-12 estimate-mgservice">
+                <!-- <div class="d-flex mt-3 text-white col-md-4 justify-content-between">
+                    <div class="d-flex">
+                        <input class="mr-2 radio" type="radio"/>
+                        <label class="mr-3 radio" id="rien">Rien</label>
+                    </div>
+                    <div class="d-flex">
+                        <input class="mr-2 radio" type="radio"/>
+                        <label class="mr-3 radio" id="heure">Heure</label>
+                    </div>
+                    <div class="d-flex">
+                        <input class="mr-2 radio" type="radio"/>
+                        <label class="mr-3 radio" id="jour">Jour</label>
+                    </div>
+                </div> -->
+                <div class="range-slider-arr d-flex justify-content-start">
+                    <span class="range-slider__type_mgs text-left" style="max-width: 240px;"><input type="checkbox" name="mgs" id="mgservice-none" class="mr-2 ml-2" onchange="onlyOneMg(this)" checked/>Sans Managed services</span>
+                </div>
+                <div class="range-slider-arr d-flex justify-content-end">
+                    <span class="range-slider__type_mgs"><input type="checkbox" name="mgs" id="mgservice-hr-add" class="mr-2" onchange="onlyOneMg(this)" />Managed Services <i class="fas fa-question-circle cursor-help mr-1" data-toggle="tooltip" data-placement="top" title="Un (des) ingénieur(s) seront met a la disposition de client pour faire des activitées sur la plateforme provisionnée pendant un nombre N d'heures."></i></span>
+                    <!-- <span id="ip-add" class="range-slider__value bg-success cursor"><i class="fa fa-plus" aria-hidden="true"></i></span> -->
+                    <div class="d-flex">
+                        <span class="range-slider__value_price_net">Heures</span>
+                        <input id="mgservice-hr-value" type="text" class="range-slider__value_price_net" style="background: none; border: 1px solid white;" placeholder="0" value="0" disabled/>
+                        <span id="mgservice-hr-price" class="range-slider__value_price_net">0</span>
+                        <span class="range-slider__value_currency">DZD</span>
+                    </div>
+                </div>
+                <div class="range-slider-arr d-flex justify-content-end">
+                    <span class="range-slider__type_mgs"><input type="checkbox" name="mgs" id="mgservice-jr-add" class="mr-2" onchange="onlyOneMg(this)" />Managed Services <i class="fas fa-question-circle cursor-help mr-1" data-toggle="tooltip" data-placement="top" title="Un (des) ingénieur(s) seront met a la disposition de client pour faire des activitées sur la plateforme provisionnée pendant un nombre N de jours."></i></span>
+                    <!-- <span id="ip-add" class="range-slider__value bg-success cursor"><i class="fa fa-plus" aria-hidden="true"></i></span> -->
+                    <div class="d-flex">
+                        <span class="range-slider__value_price_net">Jours</span>
+                        <input id="mgservice-jr-value" type="text" class="range-slider__value_price_net" style="background: none; border: 1px solid white;" placeholder="0" value="0" disabled/>
+                        <span id="mgservice-jr-price" class="range-slider__value_price_net">0</span>
+                        <span class="range-slider__value_currency">DZD</span>
+                    </div>
+                </div>
+            </div>
 
             <h3 class="col-md-12 custom-title"><i class="fas fa-headset mr-2"></i>Options Support :</h3>
             <div class="row col-md-12 estimate-support">
@@ -971,20 +1112,19 @@
                     <div class="card">
                         <div class="card-body">
                             <label class="myCheckbox">
-                                <input type="checkbox" name="support" id="standard" onchange="onlyOne(this)" checked/>
+                                <input type="checkbox" name="support" id="SUPP-STAND" onchange="onlyOne(this)" checked/>
                                 <span></span>
                             </label>
-                        <h5 class="card-title" style="text-align: center;">Support Standart</h5>
+                        <h5 class="card-title" style="text-align: center;">Support Standart (8x5) Inclus</h5>
                         <div style="text-align: center; padding-top: 20px; padding-bottom: 20px;">
                             <img src='img/support.svg' height="130px" width="100%"/>
                         </div>
                         <p class="card-text">
-                            <ul style="list-style-type: none; line-height: 1.8rem; text-align: center;">
+                            <ul style="list-style-type: none; padding: 0; line-height: 1.8rem; text-align: center;">
                                 <li>Ouverture de ticket : 24h*7j*365</li>
                                 <li>Résolution de l'incident : 8h30 – 19h00 GMT- du dimanche au jeudi</li> 
-                                <li>GTC1 : 1 heure</li>
-                                <li>GTR : Best effort</li>
-                                <li>Pénalités : Sévérité 1 - 24h*7j*365</li>
+                                <li>Temps de réponse : 1 heure</li>
+                                <li>Temps de réparation : Best effort</li>
                                 <li>TAM Dédié : Non</li>
                             </ul>
                         </p>
@@ -995,20 +1135,19 @@
                         <div class="card">
                         <div class="card-body">
                             <label class="myCheckbox">
-                                <input type="checkbox" name="support" id="business" onchange="onlyOne(this)"/>
+                                <input type="checkbox" name="support" id="SUPP-BUSN" onchange="onlyOne(this)"/>
                                 <span></span>
                             </label>
-                            <h5 class="card-title" style="text-align: center;">Support Business</h5>
+                            <h5 class="card-title" style="text-align: center;">Support Business (24x7)</h5>
                             <div style="text-align: center; padding-top: 20px; padding-bottom: 20px;">
                                 <img src='img/support.svg' height="130px" width="100%"/>
                             </div>
                             <p class="card-text">
-                            <ul style="list-style-type: none; line-height: 1.8rem; text-align: center;">
+                            <ul style="list-style-type: none; padding: 0; line-height: 1.8rem; text-align: center;">
                                 <li>Ouverture de ticket : 24h*7j*365</li>
                                 <li>Résolution de l'incident : 24h*7j*365</li> 
-                                <li>GTC1 : 1 heure</li>
-                                <li>GTR : 8 heures (après arrivée sur site)</li>
-                                <li>Pénalités : Sévérité 1 - 24h*7j*365</li>
+                                <li>Temps de réponse : 1 heure</li>
+                                <li>Temps de réparation : 8 heures</li>
                                 <li>TAM Dédié : Non</li>
                                 <li style="visibility: hidden;">TAM</li>
                             </ul>
@@ -1020,20 +1159,19 @@
                         <div class="card">
                         <div class="card-body">
                             <label class="myCheckbox">
-                                <input type="checkbox" name="support" id="premium" onchange="onlyOne(this)"/>
+                                <input type="checkbox" name="support" id="SUPP-PREM" onchange="onlyOne(this)"/>
                                 <span></span>
                             </label>
-                            <h5 class="card-title" style="text-align: center;">Support Premium</h5>
+                            <h5 class="card-title" style="text-align: center;">Support Premium (24x7)</h5>
                             <div style="text-align: center; padding-top: 20px; padding-bottom: 20px;">
                                 <img src='img/support.svg' height="130px" width="100%"/>
                             </div>
                             <p class="card-text">
-                            <ul style="list-style-type: none; line-height: 1.8rem; text-align: center;">
+                            <ul style="list-style-type: none; padding: 0; line-height: 1.8rem; text-align: center;">
                                 <li>Ouverture de ticket : 24h*7j*365</li>
                                 <li>Résolution de l'incident : 24h*7j*365</li> 
-                                <li>GTC1 : 1 heure</li>
-                                <li>GTR : 4 heures (après arrivée sur site)</li>
-                                <li>Pénalités : Sévérité 1 - 24h*7j*365</li>
+                                <li>Temps de réponse : 1 heure</li>
+                                <li>Temps de réparation : 4 heures</li>
                                 <li>TAM Dédié : Non</li>
                             </ul>
                             </p>
@@ -1044,20 +1182,19 @@
                         <div class="card">
                         <div class="card-body">
                             <label class="myCheckbox">
-                                <input type="checkbox" class="check" name="support" id="platinum" onchange="onlyOne(this)"/>
+                                <input type="checkbox" class="check" name="support" id="SUPP-PLAT" onchange="onlyOne(this)"/>
                                 <span></span>
                             </label>
-                            <h5 class="card-title" style="text-align: center;">Support Platinum</h5>
+                            <h5 class="card-title" style="text-align: center;">Support Platinum (24x7)</h5>
                             <div style="text-align: center; padding-top: 20px; padding-bottom: 20px;">
                                 <img src='img/support.svg' height="130px" width="100%"/>
                             </div>
                             <p class="card-text">
-                            <ul style="list-style-type: none; line-height: 1.8rem; text-align: center;">
+                            <ul style="list-style-type: none; padding: 0; line-height: 1.8rem; text-align: center;">
                                 <li>Ouverture de ticket : 24h*7j*365</li>
                                 <li>Résolution de l'incident : 24h*7j*365</li> 
-                                <li>GTC1 : 1 heure</li>
-                                <li>GTR : 2 heures (après arrivée sur site)</li>
-                                <li>Pénalités : Sévérité 1 - 24h*7j*365</li>
+                                <li>Temps de réponse : 1 heure</li>
+                                <li>Temps de réparation : 2 heures</li>
                                 <li>TAM Dédié : Oui</li>
                             </ul>
                             </p>
@@ -1078,7 +1215,7 @@
             
             <div class="col-md-12 custom-title-estim d-flex justify-content-between">
                 <h3><i class="fas fa-cash-register mr-3"></i>Estimation Totale :</h3>
-                <button class="btn btn-primary text-white" data-toggle="modal" data-target=".bd-example-modal-lg">Aperçu sur un fichier PDF<i class="fas fa-expand ml-2"></i></button>
+                <button class="btn btn-primary text-white display-pdf-btn" data-toggle="modal" data-target=".bd-example-modal-lg">Aperçu sur un fichier PDF<i class="fas fa-expand ml-2"></i></button>
             </div>
 
             <div class="col-md-12 estimate-total-price">
@@ -1093,10 +1230,13 @@
                     <span class="range-slider__type_total_price" style="background: none;">Terme de paiement :</span>
                     <div class="d-flex">
                         <div>
-                            <select class="custom-select mr-sm-2 bg-primary range-slider__list_price_total" id="term-select" onchange="checkTermeUpdate()">
-                              <option id="price-month" selected value="1">Mensuel</option>
-                              <option id="price-six-months" value="6">06 Mois</option>
-                              <option id="price-year" value="12">Annuelle</option>
+                            <select class="custom-select mr-sm-2 bg-primary range-slider__list_price_total" id="term-select" onchange="checkTermeUpdate()" style="font-size: 15px; padding-top: 8px;">
+                                <option id="price-month" selected value="1" style="font-size: 15px;">Mensuel</option>
+                                <!-- <option id="price-six-months" value="6">06 Mois</option> -->
+                                <option id="price-year" value="2" style="font-size: 15px;">Annuelle 2%</option>
+                                <option id="price-year" value="5" style="font-size: 15px;">Annuelle 5%</option>
+                                <option id="price-year" value="7" style="font-size: 15px;">Annuelle 7%</option>
+                                <option id="price-year" value="10" style="font-size: 15px;">Annuelle 10%</option>
                             </select>
                           </div>
                         <!-- <span id="supp-price" class="range-slider__value_price_total">0</span> -->
@@ -1127,7 +1267,7 @@
                 <div class="modal-content">
                 
                 <div class="modal-header bg-light">
-                    <h5 class="modal-title" id="exampleModalLabel">Estimation Solution Zimbra personalisée</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Estimation Web Hosting</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -1151,7 +1291,7 @@
                                 <li style="font-size: 13px;"><b>AI: </b>16500658016</li>
                                 <li style="font-size: 13px;"><b>RIB: </b>032 00001 4305801208 93</li>
                                 <li style="font-size: 13px;"><b>Banque: </b>AGB</li>
-                                <li style="font-size: 13px;"><b>Contact: </b><a href="abderrahmane.bouladour@adextechnology.dz"> abderrahmane.boulahdour@adextechnology.dz </a></li>
+                                <li style="font-size: 13px;"><b>Contact: </b><a href="mailto:<%= email %>"> <%= email %> </a></li>
                             </ul>
                         </div>
             
@@ -1164,66 +1304,82 @@
                         </div>
                     </div>
                     <h3 class="mb-2" style="margin-top: -3px;">Devis N°: <span id="devis-num-pdf"></span></h3>
-                    <h4 class="mb-2">Solution Zimbra : </h4>
+                    <h4 class="mb-2">Solution Web Hosting : </h4>
                     <table class="table">
                         <thead class="bg-primary text-white">
                             <tr>
-                                <th colspan="3">Type de Boite</th>
+                                <th colspan="3">Pack Web</th>
                                 <th>Prix (DZD)/mois</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td id="pack-type-pdf">Basic</td>
+                                <td id="pack-type-pdf">WebH-PackS</td>
                                 <td colspan="2">
                                     <ul style="list-style-type: none; line-height: 1.5rem; text-align: left;">
-                                        <li>0<span id="zimbra-disk-pdf">1</span> Go de Stockage</li>
-                                        <li>Messagerie POP, IMAP, SMTP</li>
-                                        <li>Contact / Taches / Client Web Mobile.</li>
-                                        <li><span id="zimbra-tcts-pdf"></span></li>
-                                        <li><span id="zimbra-cal-pdf"></span></li>
-                                        <li><span id="zimbra-mapi-pdf"></span></li>
-                                        <li><span id="zimbra-cnx-pdf"></span></li>
-                                        <li>Antivirus</li>
+                                        <li>Espace Disque: <span id="w-wdisk-pdf">500 Mo</span></li>
+                                        <li>Site Web 01 / Gestion DNS</li>
+                                        <li>Nom de domaine .DZ Inclus</li>
+                                        <li>Transfert de domaine</li>
+                                        <li>Cpanel / Trafic: Illimité</li>
+                                        <li>Anti Spam / Anti Virus</li>
+                                        <li>Sous Domaine: <span id="w-sdomain-pdf"></span></li>
+                                        <li>Base de Donnée: <span id="w-db-pdf"></span></li>
+                                        <li>Comptes FTP: <span id="w-ftp-pdf"></span></li>
+                                        <li>Comptes E-Mail: <span id="w-cemail-pdf"></span></li>
+                                        <li>Alias E-Mail: <span id="w-aemail-pdf"></span></li>
                                     </ul>
                                 </td>
-                                <td id="pack-price-pdf">200</td>
+                                <td id="pack-price-pdf">150</td>
                             </tr>
                         </tbody>
                     </table>
                     
-                    <h4 class="mb-2">Extension Zimbra : </h4>
+                    <h4 class="mb-2">Extension Web : </h4>
                     <table class="table">
                         <thead class="bg-primary text-white">
                             <tr>
                             <th>Ressource</th>
-                            <th>Quantitée (vcore/Go/Mpbs)</th>
+                            <th>Quantitée (Go)</th>
                             <th>Prix unit (DZD)</th>
                             <th>Prix (DZD)/mois</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                            <td>Boite</td>
-                            <td id="ram-value-pdf">0</td>
-                            <td>x <span id="box-price-value-pdf">200</span></td>
-                            <td id="ram-price-pdf">0</td>
-                            </tr>
-                            <tr>
-                            <td>Disk</td>
+                            <td>Ext-STOR</td>
                             <td id="disk-value-pdf">0</td>
-                            <td>x 25</td>
+                            <td>x 30</td>
                             <td id="disk-price-pdf">0</td>
                             </tr>
                             <tr>
                             <td>Disk (Backup)</td>
                             <td>Disk boites + Ext</td>
-                            <td>x 25</td>
+                            <td>x 30</td>
                             <td id="disk-backup-price-pdf">0</td>
                             </tr>
                         </tbody>
                     </table>
                     <br/><br/>
+                    <h4 class="mb-2" style="margin-top: 1.5rem !important;">Managed services : </h4>
+                    <table class="table">
+                        <thead class="bg-primary text-white">
+                            <tr>
+                                <th>Managed services</th>
+                                <th>Quantitée (Heure/Jour)</th>
+                                <th>Prix unit (DZD)</th>
+                                <th>Prix (DZD)/mois</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Managed services</td>
+                                <td id="mgservice-qte-pdf">0</td>
+                                <td id="mgservice-ut-pdf">x 0</td>
+                                <td id="mgservice-price-pdf">0</td>
+                            </tr>
+                        </tbody>
+                    </table>
                     <h4 class="mb-2 mt-3">Support : </h4>
                     <table class="table">
                         <thead class="bg-primary text-white">
@@ -1234,15 +1390,15 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td id="supp-type-pdf">Support standard</td>
+                                <td id="supp-type-pdf">SUPP-STAND</td>
                                 <td colspan="2">
                                     <ul style="list-style-type: none; line-height: 1.5rem; text-align: left;">
                                         <li>Ouverture de ticket : 24h*7j*365</li> 
-                                        <li>Résolution de l'incident : <span id="supp-ri-pdf">8h30 – 19h00 GMT 5jr</span></li>
-                                        <li>GTC1 : 1 heure</li>
-                                        <li>GTR : <span id="supp-gtr-pdf">Best effort</span></li>
-                                        <li>Pénalités : Sévérité 1 - 24h*7j*365</li>
+                                        <li>Résolution de l'incident : <span id="supp-ri-pdf">8h30–19h00 GMT 5j</span></li>
+                                        <li>Temps de réponse : 1 heure</li>
+                                        <li>Temps de réparation : <span id="supp-gtr-pdf">Best effort</span></li>
                                         <li>TAM Dédié : <span id="supp-tam-pdf">Non</span></li>
+                                        <li>---</li>
                                     </ul>
                                 </td>
                                 <td id="supp-price-pdf">0</td>
@@ -1277,6 +1433,15 @@
                                 <td></td>
                                 <td></td>
                                 
+                                <td style="text-align: right;">REMISE :</td>
+                                <td>-</td>
+                                <td id="total-yr-disc-price-pdf">0 (0%)</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                
                                 <td style="text-align: right;">TVA :</td>
                                 <td>Exonérée</td>
                                 <td>Exonérée</td>
@@ -1293,15 +1458,28 @@
                         </tbody>
                     </table>
                     <ul class="mb-3 pl-4 pr-4" style="line-height: 1.5rem; margin-top: 55px; list-style-type: none;">
-                        <li style="padding-bottom: 3px;" class="text-info"><b>Info : </b><span style="font-size: 15px;">Si vous paieriez un abonnement d'une année à la fois, vous bénéficieriez une reduction de 10%.</span></li>
+                        <li style="padding-bottom: 3px;" class="text-info"><b>Info : </b><span style="font-size: 15px;">Si vous paieriez un abonnement d'une année à la fois (cash), vous bénéficieriez une reduction de <span id="yr-discount-pdf">-%</span>.</span></li>
+                        <br/><br/><br/><br/><br/><br/><br/><br/><br/>
                         <li style="padding-bottom: 3px;"><b>Type de paiement : </b><span style="font-size: 15px;">Virement bancaire / Chèque / Espèces (un timbre de 1% sera rajouté en sus).</span></li>
-                        <li style="padding-bottom: 3px;"><b>Modalité de paiement (Option 01): </b><span style="font-size: 15px;">100 % à la commande pour une année, une remise de 5% sera offert pour cette option.
-                        </span></li>
-                        <li style="padding-bottom: 3px;"><b>Modalité de paiement (Option 02): </b><span style="font-size: 15px;">Signature d’un contrat d’engagement d’une année avec un paiement à l’avance trimestriellement.</span></li>
+                        <li style="padding-bottom: 3px;"><b>Modalité de paiement : </b><span style="font-size: 15px;">Payement trimestriel comme suit : 1er payement du 1er trimestre a la commande, les autres payements au plus trad le 1er jour de chaque début de trimestre.</span></li>
+                        <!-- <li style="padding-bottom: 3px;"><b>Modalité de paiement (Option 01): </b><span style="font-size: 15px;">100 % à la commande pour une année, une remise de 5% sera offert pour cette option.</span></li>
+                        <li style="padding-bottom: 3px;"><b>Modalité de paiement (Option 02): </b><span style="font-size: 15px;">Signature d’un contrat d’engagement d’une année avec un paiement à l’avance trimestriellement.</span></li> -->
                         <li style="padding-bottom: 3px;"><b>Délai de livraison : </b><span style="font-size: 15px;">Delai de mise en place de la messagerie 10 J. ADEXCLOUD, garantie la disponibilité H24/7J/7 sous les conditions d’utilisations</span></li>
                         <li style="padding-bottom: 3px;"><b>Durée de la prestation : </b><span style="font-size: 15px;">Engagement Minimum 12 mois.</span></li>
-                        <li style="padding-bottom: 3px;"><b>Période d’essai : </b><span style="font-size: 15px;">2 semaines gratuite, si toute fois le client désire avoir une période de test au-delà de 2 se-maines, ADEXCLOUD, pourra concéder une période de test d’un(01) Mois supplémentaire sans engagement annuel moyennement un pré-payement d’abonnement équivalant au mois d’essai.</span></li>
+                        <!-- <li style="padding-bottom: 3px;"><b>Période d’essai : </b><span style="font-size: 15px;">2 semaines gratuite, si toute fois le client désire avoir une période de test au-delà de 2 se-maines, ADEXCLOUD, pourra concéder une période de test d’un(01) Mois supplémentaire sans engagement annuel moyennement un pré-payement d’abonnement équivalant au mois d’essai.</span></li> -->
+                        <br/><br/>
+                        <hr/>
+                        <li style="padding-bottom: 3px;" class="text-black">Vous pouvez consulter nos offres Web Hosting sur le site par un clique | scan du code ci-dessous: </li>
                     </ul>
+                    <div style="padding-left: 30px;">
+                        <!--<img src='https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fadexcloud.dz%2Fproduct%2F5%2FVPS&chs=120x120&choe=UTF-8&chld=L|2' alt='alt'/>-->
+                        <a href='https://adexcloud.dz/product/2/Web%20Hosting' border='0' style='cursor:pointer'  rel='nofollow' target="_blank">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAIAAACzY+a1AAAABmJLR0QA/wD/AP+gvaeTAAADU0lEQVR4nO2dQY7bMAwA66L//3J6rBCsCtIk5Qwycwxi2cGAy6UsStfr9folZH4//QBSRYV4VIhHhXhUiEeFeFSIR4V4VIhHhXhUiEeFeFSIR4V4VIhHhXj+3Ljmuq7251jfPK/jT3weYfcbd+N3ceMNvFGIR4V4VIjnTi5cqayequSbiTyUfYbd97MUf4tRiEeFeFSIp5oLV7pyRmWcSI1YGSfCdO58wyjEo0I8KsTTmQufIpv/Itd2zbUewCjEo0I8KsTz6bkwUrdFPo+MuRvnA/PfilGIR4V4VIinMxd25Yxs/qvUcJXaccfh3GkU4lEhHhXiqebCiTUskdxzct1pNl8exijEo0I8KsRzJxdO1z0n66rIXGskHz+IUYhHhXhUiOdEf2FlzWd2vrSLyvrS7DvL4rtJoxCPCvGoEM91oLjJ9jNExqn0S0TG343T9X/A7r7mwm9EhXhUiKczF06sW6lQeYZKnVpZ+3MDoxCPCvGoEE81F3blgIke+QhdtWn2O5Xvv2EU4lEhHhXiuZMLK/mmax6ya95yep+aoVpwxSjEo0I8KsQzNUe6MlEbTdeL2TGn95b7D0YhHhXiUSGezv7Crv3PJuY5p/vuH9ynxijEo0I8KsRTnSPt+rs/cR7T9F7hT+39/YZRiEeFeFSIp7PXfiJnRJ5humejwoF60SjEo0I8KsRzur9wuk6aeCdXef4D5zcZhXhUiEeFeKbmSLvWqnStx6k8Q2T8rnndGxiFeFSIR4V4puZIJ/ooIvfq4sE6L4tRiEeFeFSI58Q60t3nlXzW9f2uPO05FXIfFeJRIZ4T7wuzVGqviZ73k3vL2V/4jagQjwrxnDinIsKaA6bPf9jVplkqZ/zaUyH/UCEeFeKpzpFOr/mMnC+YvdeDe8T8eK37kX47KsSjQjzVXLgykT8q62si982+L5zY+7SIUYhHhXhUiKczF3Yxsff3Lg9N1HaR+zZiFOJRIR4V4vnEXLgy3ecXuW9XT4V1ofyMCvGoEE9nLpxekppdC5r9PHLfk+cDBzEK8agQjwrxdPYXfgLTZ9BHrrXXXnKoEI8K8Xxif6GkMArxqBCPCvGoEI8K8agQjwrxqBCPCvGoEI8K8agQjwrxqBCPCvGoEM9f7f0pO57Se+AAAAAASUVORK5CYII=" rel='nofollow'/>
+                        </a>
+                    </div>
+                    <div class="col-md-6 offset-7">
+                        <span><strong>LA Direction Commerciale.</strong></span>
+                    </div>
                 </div>
                 </div>
                 <div class="modal-footer bg-light">
@@ -1320,7 +1498,7 @@
    
       </div>
       <!-- /#wrapper -->
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js"></script>
@@ -1360,73 +1538,43 @@
 
 
         var costs = new Array();
-        costs["small"]=200;
-        costs["medium"]=300;
-        costs["large"]=500;
-        costs["disk"]=25;
-        costs["standard"]=0;
-        costs["business"]=20000;
-        costs["premium"]=40000;
-        costs["platinum"]=60000;
-
-        var box_value = 0;
+        costs["small"]=150;
+        costs["medium"]=210;
+        costs["disk"]=30;
+        costs["SUPP-STAND"]=0;
+        costs["SUPP-BUSN"]=20000;
+        costs["SUPP-PREM"]=40000;
+        costs["SUPP-PLAT"]=60000;
 
         // List of prices variables
 
-        var pack_price = 200;
-        var box_price = 0;
+        var pack_price = 150;
         var disk_price = 0;
         var disk_backup_price = 0;
+        var mgservice_hr_price = 0;
+        var mgservice_jr_price = 0;
         var supp_price = 0;
         var total_price = 0;
 
-/*         // List Pack Small
+        // List Pack S
 
-        var pack_small_detail = Array();
-        pack_small_detail["vCore"]=01;
-        pack_small_detail["RAM"]=02;
-        pack_small_detail["Disk"]=40;
-        
-        // List Pack Medium
-        
-        var pack_medium_detail = Array();
-        pack_medium_detail["vCore"]=02;
-        pack_medium_detail["RAM"]=04;
-        pack_medium_detail["Disk"]=80;
-        
-        // List Pack Large
-        
-        var pack_large_detail = Array();
-        pack_large_detail["vCore"]=04;
-        pack_large_detail["RAM"]=08;
-        pack_large_detail["Disk"]=100; */
+        var pack_s_detail = Array();
+        pack_s_detail["wdisk"]="500 Mo";
+        pack_s_detail["sdomain"]=20;
+        pack_s_detail["db"]="01";
+        pack_s_detail["ftp"]=10;
+        pack_s_detail["cemail"]=10;
+        pack_s_detail["aemail"]=20;
 
-        // List Zimbra Basic
+        // List Pack L
 
-        var pack_basic_detail = Array();
-        pack_basic_detail["zdisk"]=01;
-        pack_basic_detail["ztcts"]="";
-        pack_basic_detail["zcal"]="";
-        pack_basic_detail["zmapi"]="";
-        pack_basic_detail["zcnx"]="";
-
-        // List Zimbra Standard
-
-        var pack_standard_detail = Array();
-        pack_standard_detail["zdisk"]=02;
-        pack_standard_detail["ztcts"]="Zimbra Touch Client Tabl/SP";
-        pack_standard_detail["zcal"]="Calendrier";
-        pack_standard_detail["zmapi"]="";
-        pack_standard_detail["zcnx"]="";
-
-        // List Zimbra Pro
-
-        var pack_pro_detail = Array();
-        pack_pro_detail["zdisk"]=05;
-        pack_pro_detail["ztcts"]="Zimbra Touch Client Tabl/SP";
-        pack_pro_detail["zcal"]="Calendrier";
-        pack_pro_detail["zmapi"]="Connecteur Outlook MAPI/Sync Mobile";
-        pack_pro_detail["zcnx"]="Zimbra Connect: Chat/partage écran,fichier";
+        var pack_l_detail = Array();
+        pack_l_detail["wdisk"]="01 Go";
+        pack_l_detail["sdomain"]=50;
+        pack_l_detail["db"]="02";
+        pack_l_detail["ftp"]=20;
+        pack_l_detail["cemail"]=20;
+        pack_l_detail["aemail"]=50;
 
         // List Support Standard 
 
@@ -1439,21 +1587,21 @@
 
         var supp_business_detail = Array();
         supp_business_detail["ri"]= "24h*7j*365";
-        supp_business_detail["gtr"]= "8 heures (après arrivée sur site)";
+        supp_business_detail["gtr"]= "8 heures";
         supp_business_detail["tam"]= "Non";
 
         // List Support Premium
 
         var supp_prem_detail = Array();
         supp_prem_detail["ri"]= "24h*7j*365";
-        supp_prem_detail["gtr"]= "4 heures (après arrivée sur site)";
+        supp_prem_detail["gtr"]= "4 heures";
         supp_prem_detail["tam"]= "Non";
 
         // List Support Platinum 
 
         var supp_plat_detail = Array();
         supp_plat_detail["ri"]= "24h*7j*365";
-        supp_plat_detail["gtr"]= "2 heures (après arrivée sur site)";
+        supp_plat_detail["gtr"]= "2 heures";
         supp_plat_detail["tam"]= "Oui";
 
 
@@ -1502,46 +1650,39 @@
             // Update Pack Info For PDF
             var output_pack_price_pdf = document.getElementById("pack-price-pdf");
             output_pack_price_pdf.innerHTML = costs[checkbox.id];
-            var output_box_price_value_pdf = document.getElementById("box-price-value-pdf")
-            output_box_price_value_pdf.innerHTML = costs[checkbox.id];
+            
             var output_pack_type_pdf = document.getElementById("pack-type-pdf");
             // output_pack_type_pdf.innerHTML = "Pack " + checkbox.id;
             
-            var output_zimbra_disk_pdf = document.getElementById("zimbra-disk-pdf");
-            var output_zimbra_tcts_pdf = document.getElementById("zimbra-tcts-pdf");
-            var output_zimbra_cal_pdf = document.getElementById("zimbra-cal-pdf");
-            var output_zimbra_mapi_pdf = document.getElementById("zimbra-mapi-pdf");
-            var output_zimbra_cnx_pdf = document.getElementById("zimbra-cnx-pdf");
+            var output_w_wdisk_pdf = document.getElementById("w-wdisk-pdf");
+            var output_w_sdomain_pdf = document.getElementById("w-sdomain-pdf");
+            var output_w_db_pdf = document.getElementById("w-db-pdf");
+            var output_w_ftp_pdf = document.getElementById("w-ftp-pdf");
+            var output_w_cemail_pdf = document.getElementById("w-cemail-pdf");
+            var output_w_aemail_pdf = document.getElementById("w-aemail-pdf");
 
             /* var output_pack_ram_pdf = document.getElementById("pack-ram-pdf");
             var output_pack_disk_pdf = document.getElementById("pack-disk-pdf"); */
             
             if (checkbox.id === "small") {
-                output_zimbra_disk_pdf.innerHTML = pack_basic_detail["zdisk"];
-                output_zimbra_tcts_pdf.innerHTML = pack_basic_detail["ztcts"];
-                output_zimbra_cal_pdf.innerHTML = pack_basic_detail["zcal"];
-                output_zimbra_mapi_pdf.innerHTML = pack_basic_detail["zmapi"];
-                output_zimbra_cnx_pdf.innerHTML = pack_basic_detail["zcnx"];
+                output_w_wdisk_pdf.innerHTML = pack_s_detail["wdisk"];
+                output_w_sdomain_pdf.innerHTML = pack_s_detail["sdomain"];
+                output_w_db_pdf.innerHTML = pack_s_detail["db"];
+                output_w_ftp_pdf.innerHTML = pack_s_detail["ftp"];
+                output_w_cemail_pdf.innerHTML = pack_s_detail["cemail"];
+                output_w_aemail_pdf.innerHTML = pack_s_detail["aemail"];
                 
-                output_pack_type_pdf.innerHTML = "Basic";
+                output_pack_type_pdf.innerHTML = "WebH-PackS";
             }
             if (checkbox.id === "medium") {
-                output_zimbra_disk_pdf.innerHTML = pack_standard_detail["zdisk"];
-                output_zimbra_tcts_pdf.innerHTML = pack_standard_detail["ztcts"];
-                output_zimbra_cal_pdf.innerHTML = pack_standard_detail["zcal"];
-                output_zimbra_mapi_pdf.innerHTML = pack_standard_detail["zmapi"];
-                output_zimbra_cnx_pdf.innerHTML = pack_standard_detail["zcnx"];
+                output_w_wdisk_pdf.innerHTML = pack_l_detail["wdisk"];
+                output_w_sdomain_pdf.innerHTML = pack_l_detail["sdomain"];
+                output_w_db_pdf.innerHTML = pack_l_detail["db"];
+                output_w_ftp_pdf.innerHTML = pack_l_detail["ftp"];
+                output_w_cemail_pdf.innerHTML = pack_l_detail["cemail"];
+                output_w_aemail_pdf.innerHTML = pack_l_detail["aemail"];
                 
-                output_pack_type_pdf.innerHTML = "Standard";
-            }
-            if (checkbox.id === "large") {
-                output_zimbra_disk_pdf.innerHTML = pack_pro_detail["zdisk"];
-                output_zimbra_tcts_pdf.innerHTML = pack_pro_detail["ztcts"];
-                output_zimbra_cal_pdf.innerHTML = pack_pro_detail["zcal"];
-                output_zimbra_mapi_pdf.innerHTML = pack_pro_detail["zmapi"];
-                output_zimbra_cnx_pdf.innerHTML = pack_pro_detail["zcnx"];
-                
-                output_pack_type_pdf.innerHTML = "Professionnel";
+                output_pack_type_pdf.innerHTML = "WebH-PackL";
             }
             
             output_pack_price_pdf.innerHTML = costs[checkbox.id];
@@ -1552,56 +1693,11 @@
                 if (item !== checkbox) item.checked = false
                 if (item === checkbox) item.checked = true
             })
-            boxSizing()
             totalPrice()
             checkTermeUpdate()
         }
 
         totalPrice()
-
-        function boxSizing() {
-
-        // Estimate Boite Price //
-
-        var slider_box = document.getElementById("box-range");
-        var output_box_value = document.getElementById("box-value");
-        var output_box_price = document.getElementById("box-price");
-        output_box_value.innerHTML = slider_box.value;
-        output_box_price.innerHTML = slider_box.value * pack_price;
-
-        box_value = slider_box
-
-        // Update Boite Info For PDF
-
-        var output_box_value_pdf = document.getElementById("ram-value-pdf");
-        var output_box_price_pdf = document.getElementById("ram-price-pdf");
-        output_box_value_pdf.innerHTML = slider_box.value;
-        output_box_price_pdf.innerHTML = slider_box.value * pack_price;
-
-        //
-
-        slider_box.oninput = function() {
-            output_box_value.innerHTML = this.value;
-            output_box_price.innerHTML = this.value * pack_price;
-
-            box_value = slider_box.value
-
-            // Update Boite Info For PDF
-
-            output_box_value_pdf.innerHTML = this.value;
-            output_box_price_pdf.innerHTML = this.value * pack_price;
-
-            //
-
-            box_price = this.value * pack_price;
-            console.log("boxxx price: ", box_price)
-            backupDisk()
-            totalPrice()
-            checkTermeUpdate()
-        }
-        
-        box_price = slider_box.value * pack_price;
-        }
 
         // Estimate Disk Price
 
@@ -1644,20 +1740,14 @@
         var checkbox = document.getElementById('backup-add')
 
         if(checkbox.checked) {
-        if (pack_price == "200") {
-            disk_backup_price = box_value.value * 1 * 25 + disk_price
+        if (pack_price == "150") {
+            disk_backup_price = 0.5 * 30 + disk_price
             console.log("backup disk price : ", disk_backup_price)
             output_backup_price.innerHTML = disk_backup_price
             output_disk_backup_price_pdf.innerHTML = disk_backup_price
         }
-        if (pack_price == "300") {
-            disk_backup_price = box_value.value * 2 * 25 + disk_price
-            console.log("backup disk price : ", disk_backup_price)
-            output_backup_price.innerHTML = disk_backup_price
-            output_disk_backup_price_pdf.innerHTML = disk_backup_price
-        }
-        if (pack_price == "500") {
-            disk_backup_price = box_value.value * 5 * 25 + disk_price
+        if (pack_price == "210") {
+            disk_backup_price = 1 * 30 + disk_price
             console.log("backup disk price : ", disk_backup_price)
             output_backup_price.innerHTML = disk_backup_price
             output_disk_backup_price_pdf.innerHTML = disk_backup_price
@@ -1678,6 +1768,100 @@
         }
 
 
+        function onlyOneMg(checkbox) {
+            var checkboxes = document.getElementsByName('mgs')
+            var output_mgservice_hr_price = document.getElementById("mgservice-hr-price");
+            var output_mgservice_jr_price = document.getElementById("mgservice-jr-price");
+            var mgservice_hr_value = document.getElementById("mgservice-hr-value")
+            var mgservice_jr_value = document.getElementById("mgservice-jr-value")
+
+            var output_mgservice_qte_pdf = document.getElementById("mgservice-qte-pdf");
+            var output_mgservice_ut_pdf = document.getElementById("mgservice-ut-pdf");    
+            var output_mgservice_price_pdf = document.getElementById("mgservice-price-pdf")
+            
+            if (checkbox.id === "mgservice-none") {
+                console.log("jour")
+                mgservice_hr_value.disabled = true;
+                mgservice_jr_value.disabled = true;
+                mgservice_hr_value.value = 0;
+                mgservice_jr_value.value = 0;
+                output_mgservice_jr_price.innerHTML = 0
+                output_mgservice_hr_price.innerHTML = 0
+                mgservice_hr_price = 0;
+                mgservice_jr_price = 0;
+                output_mgservice_qte_pdf.innerHTML = 0
+                output_mgservice_ut_pdf.innerHTML = "x 0"
+                output_mgservice_price_pdf.innerHTML = 0
+                totalPrice()
+                checkTermeUpdate()
+            }
+            
+            if (checkbox.id === "mgservice-hr-add") {
+                console.log("heure")
+                mgservice_jr_value.disabled = true;
+                mgservice_hr_value.disabled = false;
+                mgservice_jr_value.value = 0;
+                output_mgservice_jr_price.innerHTML = 0
+                output_mgservice_hr_price.innerHTML = mgservice_hr_value.value * 5600
+                console.log(mgservice_hr_value.value)
+                mgservice_hr_price = mgservice_hr_value.value * 5600;
+                mgservice_jr_price = 0;
+
+                output_mgservice_qte_pdf.innerHTML = mgservice_hr_value.value
+                output_mgservice_ut_pdf.innerHTML = "x 5600"
+                output_mgservice_price_pdf.innerHTML = mgservice_hr_value.value * 5600
+
+                mgservice_hr_value.oninput = function() {
+                    output_mgservice_hr_price.innerHTML = mgservice_hr_value.value * 5600; 
+                    output_mgservice_jr_price.innerHTML = 0;
+                    mgservice_hr_price = mgservice_hr_value.value * 5600;
+
+                    output_mgservice_qte_pdf.innerHTML = mgservice_hr_value.value
+                    output_mgservice_price_pdf.innerHTML = mgservice_hr_value.value * 5600
+                    totalPrice()
+                    checkTermeUpdate()
+                }
+                totalPrice()
+                checkTermeUpdate()
+
+            }
+
+            if (checkbox.id === "mgservice-jr-add") {
+                console.log("jour")
+                mgservice_hr_value.disabled = true;
+                mgservice_jr_value.disabled = false;
+                mgservice_hr_value.value = 0;
+                output_mgservice_jr_price.innerHTML = mgservice_jr_value.value * 5600 * 8
+                output_mgservice_hr_price.innerHTML = 0
+                console.log(mgservice_jr_value.value)
+                mgservice_jr_price = mgservice_jr_value.value * 5600 * 8;
+                mgservice_hr_price = 0;
+
+                output_mgservice_qte_pdf.innerHTML = mgservice_jr_value.value
+                output_mgservice_ut_pdf.innerHTML = "x 44800"
+                output_mgservice_price_pdf.innerHTML = mgservice_jr_value.value * 5600 * 8
+
+                mgservice_jr_value.oninput = function() {
+                    output_mgservice_jr_price.innerHTML = mgservice_jr_value.value * 5600 * 8; 
+                    output_mgservice_hr_price.innerHTML = 0;
+                    mgservice_jr_price = mgservice_jr_value.value * 5600 * 8;
+
+                    output_mgservice_qte_pdf.innerHTML = mgservice_jr_value.value
+                    output_mgservice_price_pdf.innerHTML = mgservice_jr_value.value * 5600 * 8
+                    totalPrice()
+                    checkTermeUpdate()
+                }
+                totalPrice()
+                checkTermeUpdate()
+            }
+
+            checkboxes.forEach((item) => {
+                if (item !== checkbox) item.checked = false
+                if (item === checkbox) item.checked = true
+            })
+        }
+
+
         // Estimate Support Price
 
         function onlyOne(checkbox) {
@@ -1692,32 +1876,32 @@
             output_supp_price_pdf.innerHTML = costs[checkbox.id];
             
             var output_supp_type_pdf = document.getElementById("supp-type-pdf");
-            output_supp_type_pdf.innerHTML = "Support " + checkbox.id;
+            output_supp_type_pdf.innerHTML = checkbox.id;
 
 
             var output_supp_ri_pdf = document.getElementById("supp-ri-pdf");
             var output_supp_gtr_pdf = document.getElementById("supp-gtr-pdf");
             var output_supp_tam_pdf = document.getElementById("supp-tam-pdf");
             
-            if (checkbox.id === "standard") {
+            if (checkbox.id === "SUPP-STAND") {
                 output_supp_ri_pdf.innerHTML = supp_std_detail["ri"];
                 output_supp_gtr_pdf.innerHTML = supp_std_detail["gtr"];
                 output_supp_tam_pdf.innerHTML = supp_std_detail["tam"];
             }
 
-            if (checkbox.id === "business") {
+            if (checkbox.id === "SUPP-BUSN") {
                 output_supp_ri_pdf.innerHTML = supp_business_detail["ri"];
                 output_supp_gtr_pdf.innerHTML = supp_business_detail["gtr"];
                 output_supp_tam_pdf.innerHTML = supp_business_detail["tam"];
             }
 
-            if (checkbox.id === "premium") {
+            if (checkbox.id === "SUPP-PREM") {
                 output_supp_ri_pdf.innerHTML = supp_prem_detail["ri"];
                 output_supp_gtr_pdf.innerHTML = supp_prem_detail["gtr"];
                 output_supp_tam_pdf.innerHTML = supp_prem_detail["tam"];
             }
 
-            if (checkbox.id === "platinum") {
+            if (checkbox.id === "SUPP-PLAT") {
                 output_supp_ri_pdf.innerHTML = supp_plat_detail["ri"];
                 output_supp_gtr_pdf.innerHTML = supp_plat_detail["gtr"];
                 output_supp_tam_pdf.innerHTML = supp_plat_detail["tam"];
@@ -1737,10 +1921,8 @@
         totalPrice()
         
         function totalPrice(){
-            boxSizing()
             backupDisk()
-            console.log("total ", box_price)
-            total_price = box_price + disk_price + disk_backup_price + supp_price;
+            total_price = pack_price + disk_price + disk_backup_price + mgservice_hr_price + mgservice_jr_price + supp_price;
             // console.log('Total Price: ',total_price)
             var output_total_price = document.getElementById("total-prod-price");
             output_total_price.innerHTML = total_price
@@ -1756,9 +1938,9 @@
             var output_total_yr_ht_price_pdf = document.getElementById("total-yr-ht-prod-price-pdf");
             output_total_yr_ht_price_pdf.innerHTML = total_price * 12
 
-            var discount = Math.round(total_price * 12 * 0.10)
+            var discount = Math.round(total_price * 12 * 0.05)
             var output_total_yr_price_pdf = document.getElementById("total-yr-prod-price-pdf");
-            output_total_yr_price_pdf.innerHTML = total_price * 12 - discount + ' (-10%)'
+            output_total_yr_price_pdf.innerHTML = total_price * 12
 
             //
         }
@@ -1769,28 +1951,67 @@
             var output_discount_perc = document.getElementById("discount-perc")
             var output_total_price_term = document.getElementById("total-prod-price-term");
             var term_select_value = term_select.options[term_select.selectedIndex].value;
-            total_price = total_price * term_select_value
+            // total_price = total_price * term_select_value
+            // total_price = total_price * 12
+            var output_total_yr_disc_price_pdf = document.getElementById("total-yr-disc-price-pdf");
+            var output_total_yr_price_pdf = document.getElementById("total-yr-prod-price-pdf");
+            var output_yr_discount_pdf = document.getElementById("yr-discount-pdf");
+
             console.log(term_select_value)
-            if (term_select_value == 12) {
-                discount = Math.round(total_price * 0.10)
+            if (term_select_value == 10) {
+                total_price = total_price * 12
+                discount = Math.round(total_price * 0.1)
                 output_total_price_term.innerHTML = total_price - discount
                 console.log(total_price)
                 output_discount_price.innerHTML = discount * -1
                 output_discount_perc.innerHTML = '10%'
+                output_total_yr_disc_price_pdf.innerHTML = discount * -1 + " (10%)"
+                output_total_yr_price_pdf.innerHTML = total_price - discount
+                output_yr_discount_pdf.innerHTML = '10%'
             }
-            if (term_select_value == 6) {
+            if (term_select_value == 7) {
+                total_price = total_price * 12
                 discount = Math.round(total_price * 0.07)
                 output_total_price_term.innerHTML = total_price - discount
                 console.log(total_price)
                 output_discount_price.innerHTML = discount * -1
                 output_discount_perc.innerHTML = '7%'
+                output_total_yr_disc_price_pdf.innerHTML = discount * -1 + " (7%)"
+                output_total_yr_price_pdf.innerHTML = total_price - discount
+                output_yr_discount_pdf.innerHTML = '7%'
+            }
+            if (term_select_value == 5) {
+                total_price = total_price * 12
+                discount = Math.round(total_price * 0.05)
+                output_total_price_term.innerHTML = total_price - discount
+                console.log(total_price)
+                output_discount_price.innerHTML = discount * -1
+                output_discount_perc.innerHTML = '5%'
+                output_total_yr_disc_price_pdf.innerHTML = discount * -1 + " (5%)"
+                output_total_yr_price_pdf.innerHTML = total_price - discount
+                output_yr_discount_pdf.innerHTML = '5%'
+            }
+            if (term_select_value == 2) {
+                total_price = total_price * 12
+                discount = Math.round(total_price * 0.02)
+                output_total_price_term.innerHTML = total_price - discount
+                console.log(total_price)
+                output_discount_price.innerHTML = discount * -1
+                output_discount_perc.innerHTML = '2%'
+                output_total_yr_disc_price_pdf.innerHTML = discount * -1 + " (2%)"
+                output_total_yr_price_pdf.innerHTML = total_price - discount
+                output_yr_discount_pdf.innerHTML = '2%'
             }
             if (term_select_value == 1) {
+                total_price = total_price * 1
                 discount = total_price * 0
                 output_total_price_term.innerHTML = total_price - discount
                 console.log(total_price)
                 output_discount_price.innerHTML = discount * -1
                 output_discount_perc.innerHTML = '0%'
+                output_total_yr_disc_price_pdf.innerHTML = discount * -1 + " (0%)"
+                output_total_yr_price_pdf.innerHTML = total_price * 12 - discount
+                output_yr_discount_pdf.innerHTML = '-%'
             }     
         }
 
@@ -1801,16 +2022,19 @@
 
         checkTerme()
 
+        var loading = false
+
         function generatePDF() {
             // Choose the element that our invoice is rendered in.
+            var loading = true;
             const element = document.getElementById("invoice");
             // Choose the element and save the PDF for our user.
             // html2pdf()
                 // .from(element)
                 // .save();
             html2pdf(element, {
-                margin:       10,
-                filename:     'invoice_template.pdf',
+                margin:       8,
+                filename:     'offre tecnico-comerciale web-hosting.pdf',
                 image:        { type: 'jpg', quality: 0.99 },
                 html2canvas:  { scale: 1, logging: true, dpi: 192, letterRendering: true },
                 jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <!-- Required meta tags -->
@@ -9,6 +9,7 @@
   <title>Sizing offers</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
       body {
           position: relative;
@@ -81,7 +82,7 @@
       .sidebar-nav {
           position: absolute;
           top: 0;
-          width: 220px;
+          width: 250px;
           margin: 0;
           padding: 0;
           list-style: none;
@@ -92,6 +93,7 @@
           line-height: 20px;
           display: inline-block;
           width: 100%;
+          letter-spacing: 0.03rem;
       }
 
       .sidebar-nav li:before {
@@ -156,7 +158,8 @@
           position: relative;
           background:#212531;
           background: linear-gradient(to right bottom, #2f3441 50%, #212531 50%);
-      padding-top: 1em;
+          padding-top: 1em;
+          width: 220px;
       }
       .sidebar-brand a {
           color: #ddd;
@@ -316,7 +319,8 @@
         z-index: 0.5 !important;
         background: #002140fe;
         color: white;
-        margin-bottom: 25px;
+        margin-bottom: 30px;
+        letter-spacing: 0.05rem;
       }
       .card:hover {
         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
@@ -375,14 +379,25 @@
         <ul class="nav sidebar-nav">
           <div class="sidebar-header">
             <div class="sidebar-brand">
-              <a href="/">Adex Cloud</a>
+              <a href="/">ADEX Cloud</a>
             </div>
           </div>
-          <li><a href="/dashboard">Tableau de board</a></li>
-          <li><a href="#about">Offre VPS</a></li>
-          <li><a href="#events">Offre Zimbra</a></li>
-          <li><a href="#team">Offre Web</a></li>
-         <li><a href="/logout">Deconnecter</a></li>
+          <li><a href="/dashboard"><i class="fa fa-tachometer-alt mr-2"></i>Tableau de board</a></li>
+          <% if(!verified){ %>
+            <li><a href="#" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-server mr-2"></i>Offre VPS Cloud</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-mail-bulk mr-2"></i>Offre Zimbra Cloud</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-globe mr-2"></i>Offre Web Hosting</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-shopping-cart mr-2"></i>Offre eBoutique</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-mail-bulk mr-2"></i>Offre Web Email</a></li>
+          <% } %>
+          <% if(verified){ %>
+            <li><a href="/vps-offer-gen"><i class="fa fa-server mr-2"></i>Offre VPS Cloud</a></li>
+            <li><a href="/zimbra-offer-gen"><i class="fa fa-mail-bulk mr-2"></i>Offre Zimbra Cloud</a></li>
+            <li><a href="/web-offer-gen"><i class="fa fa-globe mr-2"></i>Offre Web Hosting</a></li>
+            <li><a href="/eboutik-offer-gen"><i class="fa fa-shopping-cart mr-2"></i>Offre E-Boutik</a></li>
+            <li><a href="/web-email-offer-gen"><i class="fa fa-envelope mr-2"></i>Offre Web Email</a></li>
+          <% } %>
+          <li><a href="/logout"><i class="fa fa-sign-out-alt mr-2"></i>Déconnecter</a></li>
          </ul>
      </nav>
            <!-- /#sidebar-wrapper -->
@@ -396,7 +411,7 @@
                </button>
                <div class="container">
                   <!-- show a dialog if user is not verified  -->
-                  <h2 class="text-left text-white" style="margin-top: 0px; margin-bottom: 20px;">Tableau de board</h2>
+                  <h2 class="text-left text-white" style="margin-top: 0px; margin-bottom: 20px; letter-spacing: 0.05rem;">Tableau de board <i class="fa fa-tachometer-alt ml-2"></i></h2>
                   <hr style="background: white; margin-bottom: 30px;"/>
                   <% if(!verified){ %>
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -404,8 +419,7 @@
                       <a href="/user/send-verification-email">Re-envoyer l'Email de verification</a>
                       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
-                      </button>
-              
+                      </button>    
                     </div>
                   <% } %>
               
@@ -431,11 +445,11 @@
                     <% } %>
                   <% } %>
           
-                  <h2 class="text-left text-white" style="margin-top: 20px; margin-bottom: 20px;">Bienvenu 👋 <%= username %> !</h2>          
+                  <h2 class="text-left text-white" style="margin-top: 20px; margin-bottom: 20px; letter-spacing: 0.05rem;">Bienvenu 👋 <%= username %> !</h2>          
                   <div style="width: 100%; background: none;">
-                    <div class="mt-5" style="margin-bottom: 50px;">
+                    <div class="mt-5" style="margin-bottom: 50px; letter-spacing: 0.05rem;">
                       <h3 class="text-white">
-                        Créer votre offre personnalisée par ici .
+                        Créer votre offre personnalisée par ici 🧙🏻‍♂️.
                       </h3>
                     </div>
                   </div>
@@ -449,11 +463,11 @@
                           <p class="card-text"><%= offer.overview %></p>
                           <% if(!verified){ %>  
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                              Continuer vers l'offre
+                              Continuer vers l'offre <i class="fa fa-arrow-circle-right ml-1"></i>
                             </button>
                           <% } %>
                           <% if(verified) { %>  
-                            <a href="<%= offer.link %>" class="btn btn-primary" target="blank">Continuer vers l'offre</a>
+                            <a href="<%= offer.link %>" class="btn btn-primary" target="_blank">Continuer vers l'offre <i class="fa fa-arrow-circle-right ml-1"></i></a>
                           <% } %>  
                         </div>
                       </div>

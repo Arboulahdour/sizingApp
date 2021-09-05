@@ -6,11 +6,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Sizing offres Zimbra</title>
+  <title>Sizing offres Email Hosting</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/0.5.0/sweet-alert.min.css">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -383,14 +384,6 @@
         min-height: 215px;
         padding: 5px 25px 5px 25px;
     }
-    .estimate-mgservice {
-        margin-bottom: 0;
-        margin: 20px auto;
-        border: 2px solid #d7dcdf;
-        border-radius: 10px;
-        min-height: 90px;
-        padding: 5px 25px 5px 25px;
-    }
     .estimate-support {
         margin-bottom: 0;
         margin: 20px auto;
@@ -401,6 +394,15 @@
         margin-bottom: 0;
         margin: 20px auto;
         padding: 0;
+    }
+
+    .estimate-mgservice {
+        margin-bottom: 0;
+        margin: 20px auto;
+        border: 2px solid #d7dcdf;
+        border-radius: 10px;
+        min-height: 90px;
+        padding: 5px 25px 5px 25px;
     }
 
     .estimate-support-price {
@@ -849,6 +851,7 @@
  .fa:hover {
      color: #fff
  }
+
     .swal-title {
         color: black;
         letter-spacing: 0.05rem;
@@ -872,10 +875,7 @@
         letter-spacing: 0.05rem;
     }
 
-    .radio {
-        height: 20px;
-        width: 20px;
-    }
+
       
 
     /* General Styles */
@@ -904,6 +904,7 @@
 
 
 <body>
+
     <script type="text/javascript">
         function sweetAlert(){
             swal({
@@ -934,7 +935,7 @@
           <li><a href="/eboutik-offer-gen"><i class="fa fa-shopping-cart mr-2"></i>Offre E-Boutik</a></li>
           <li><a href="/web-email-offer-gen"><i class="fa fa-envelope mr-2"></i>Offre Web Email</a></li>
           <li><a href="/logout"><i class="fa fa-sign-out-alt mr-2"></i>Déconnecter</a></li>
-         </ul>
+        </ul>
     </nav>
     <!-- /#sidebar-wrapper -->
 
@@ -947,7 +948,7 @@
         </button>
         <div class="container">
         <div class="col-md-12 d-flex justify-content-between p-0" style="margin-top: 0px; margin-bottom: 20px;">
-            <h2 class="text-left text-white">Offre Messagerie Zimbra</h2>
+            <h2 class="text-left text-white">Offre Email Hosting</h2>
             <h4 class="text-left text-white">Devis N°: <input type="text" id="devis-num" class="devis-input-style ml-1" /></h4>
         </div>
         <hr style="background: white; margin-bottom: 30px;"/>
@@ -956,101 +957,128 @@
             <h5 class="text-white">Adresse: <input type="text" id="client-address" class="address-input-style ml-1" /></h5>
         </div>
         <hr style="background: white; margin-bottom: 30px;"/>
-        <h3 class="col-md-12 custom-title"><i class="fa fa-server mr-2" aria-hidden="true"></i> Solutions Zimbra :</h3>
-        <div class="row col-md-12 estimate-support">
-                <div class="col-sm-4 mb-5">
+        <h3 class="col-md-12 custom-title"><i class="fa fa-server mr-2" aria-hidden="true"></i> Pack Email :</h3>
+        <div class="row col-md-10 estimate-support">
+                <div class="col-sm-6 mb-5">
                     <div class="card">
                         <div class="card-body">
                             <label class="myCheckbox">
                                 <input type="checkbox" name="pack" id="small" onchange="onlyOnePack(this)" checked/>
                                 <span></span>
                             </label>
-                        <h5 class="card-title" style="text-align: center;">BASIC</h5>
+                        <h5 class="card-title" style="text-align: center;">PACK S Email</h5>
                         <div style="text-align: center; padding-top: 20px; padding-bottom: 20px;">
-                            <img src='img/zimbra.svg' height="150px" width="100%"/>
+                            <img src='img/email.svg' height="150px" width="100%"/>
                         </div>
                         <p class="card-text">
                             <ul style="list-style-type: none; padding: 0; line-height: 1.8rem; text-align: center;">
-                                <li>01 GO Stockage</li>
-                                <li>Messagerie POP, IMPA, SMTP</li>
-                                <li>CONTACT</li>
-                                <li>TACHES</li>
-                                <li>Client Web Mobile</li>
-                                <li>Antivirus</li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
+                                <li>Nom de domaine .DZ Inclus</li>
+                                <li>Espace Disque 05 Go</li>
+                                <li>Frais d’activation</li>
+                                <li>Transfert de domaine</li>
+                                <li>Comptes E-Mail: 05</li>
+                                <li>Alias E-mail</li>
+                                <li>Trafic illimité</li>
+                                <li>Anti Spam</li>
+                                <li>Anti Virus</li>
+                                <li>Redirection</li>
                             </ul>
                         </p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="col-sm-4 mb-5">
+                <div class="col-sm-6 mb-5">
                     <div class="card">
                     <div class="card-body">
                         <label class="myCheckbox">
                             <input type="checkbox" name="pack" id="medium" onchange="onlyOnePack(this)"/>
                             <span></span>
                         </label>
-                        <h5 class="card-title" style="text-align: center;">STANDARD</h5>
+                        <h5 class="card-title" style="text-align: center;">PACK M Email</h5>
                         <div style="text-align: center; padding-top: 20px; padding-bottom: 20px;">
-                            <img src='img/zimbra.svg' height="150px" width="100%"/>
+                            <img src='img/email.svg' height="150px" width="100%"/>
                         </div>
                         <p class="card-text">
                         <ul style="list-style-type: none; padding: 0; line-height: 1.8rem; text-align: center;">
-                            <li>02 GO Stockage</li>
-                            <li>Messagerie POP, IMPA, SMTP</li> 
-                            <li>Zimbra Touch Client Tablette et smartphone</li>
-                            <li>CONTACT</li>
-                            <li>TACHES</li>
-                            <li>Client Web Mobile</li>
-                            <li>Antivirus</li>
-                            <li>Calendrier</li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
+                            <li>Nom de domaine .DZ Inclus</li>
+                            <li>Espace Disque 20 Go</li>
+                            <li>Frais d’activation</li>
+                            <li>Transfert de domaine</li>
+                            <li>Comptes E-Mail: 20</li>
+                            <li>Alias E-mail</li>
+                            <li>Trafic illimité</li>
+                            <li>Anti Spam</li>
+                            <li>Anti Virus</li>
+                            <li>Redirection</li>
                         </ul>
                         </p>
                     </div>
                     </div>
                 </div>
-                
-                <div class="col-sm-4 mb-5">
+
+                <div class="col-sm-6 mb-5">
                     <div class="card">
                     <div class="card-body">
                         <label class="myCheckbox">
                             <input type="checkbox" name="pack" id="large" onchange="onlyOnePack(this)"/>
                             <span></span>
                         </label>
-                        <h5 class="card-title" style="text-align: center;">PROFFESIONNEL</h5>
+                        <h5 class="card-title" style="text-align: center;">PACK L Email</h5>
                         <div style="text-align: center; padding-top: 20px; padding-bottom: 20px;">
-                            <img src='img/zimbra.svg' height="150px" width="100%"/>
+                            <img src='img/email.svg' height="150px" width="100%"/>
                         </div>
                         <p class="card-text">
                         <ul style="list-style-type: none; padding: 0; line-height: 1.8rem; text-align: center;">
-                            <li>05 GO Stockage</li>
-                            <li>Messagerie POP, IMPA, SMTP</li> 
-                            <li>Connecteur Outlook MAPI</li>
-                            <li>Synchronisation Mobile</li>
-                            <li>Zimbra Connect : Chat, partage d’écran et de fichier</li>
-                            <li>CONTACT</li>
-                            <li>TACHES</li>
-                            <li>Client Web Mobile</li>
-                            <li>Zimbra Touch Client Tablette et smartphone</li>
-                            <li>Antivirus</li>
-                            <li>Calendrier</li>
+                            <li>Nom de domaine .DZ Inclus</li>
+                            <li>Espace Disque 50 Go</li>
+                            <li>Frais d’activation</li>
+                            <li>Transfert de domaine</li>
+                            <li>Comptes E-Mail: 50</li>
+                            <li>Alias E-mail</li>
+                            <li>Trafic illimité</li>
+                            <li>Anti Spam</li>
+                            <li>Anti Virus</li>
+                            <li>Redirection</li>
                         </ul>
                         </p>
                     </div>
                     </div>
                 </div>
+
+                <div class="col-sm-6 mb-5">
+                    <div class="card">
+                    <div class="card-body">
+                        <label class="myCheckbox">
+                            <input type="checkbox" name="pack" id="xlarge" onchange="onlyOnePack(this)"/>
+                            <span></span>
+                        </label>
+                        <h5 class="card-title" style="text-align: center;">PACK XL Email</h5>
+                        <div style="text-align: center; padding-top: 20px; padding-bottom: 20px;">
+                            <img src='img/email.svg' height="150px" width="100%"/>
+                        </div>
+                        <p class="card-text">
+                        <ul style="list-style-type: none; padding: 0; line-height: 1.8rem; text-align: center;">
+                            <li>Nom de domaine .DZ Inclus</li>
+                            <li>Espace Disque 100 Go</li>
+                            <li>Frais d’activation</li>
+                            <li>Transfert de domaine</li>
+                            <li>Comptes E-Mail: 100</li>
+                            <li>Alias E-mail</li>
+                            <li>Trafic illimité</li>
+                            <li>Anti Spam</li>
+                            <li>Anti Virus</li>
+                            <li>Redirection</li>
+                        </ul>
+                        </p>
+                    </div>
+                    </div>
+                </div>
+
             </div>
             <div class="col-md-12 estimate-support-price">
                 <div class="range-slider-arr d-flex justify-content-end">
-                    <span class="range-slider__type_supp" style="background: none;">Prix de la solution: <span style="font-size: 10px;">(Boite)</span></span>
+                    <span class="range-slider__type_supp" style="background: none;">Prix de la solution: </span>
                     <div class="d-flex">
                         <span id="pack-price" class="range-slider__value_price_supp">200</span>
                         <span class="range-slider__value_currency">DZD</span>
@@ -1058,19 +1086,7 @@
                 </div>    
             </div>
 
-            <h3 class="col-md-12 custom-title"><i class="fa fa-inbox mr-2" aria-hidden="true"></i> Boites Zimbra : </h3>
-            <div class="col-md-12 estimate-hardware">
-                  
-                <div class="range-slider d-flex">
-                    <span class="range-slider__type">Boite</span>
-                    <input id="box-range" class="range-slider__range" type="range" value="0" min="0" max="4096" step="1">
-                    <span id="box-value" class="range-slider__value">0</span>
-                    <span id="box-price" class="range-slider__value_price">0</span>
-                    <span class="range-slider__value_currency">DZD</span>
-                </div>
-            </div>
-
-            <h3 class="col-md-12 custom-title"><i class="fa fa-server mr-2" aria-hidden="true"></i> Extension Zimbra : </h3>
+            <h3 class="col-md-12 custom-title"><i class="fa fa-server mr-2" aria-hidden="true"></i> Extension Web : </h3>
             <!-- <div class="col-md-12 estimate-hardware">
                   
                 <div class="range-slider d-flex">
@@ -1092,7 +1108,7 @@
                 </div>
                 
                 <div class="range-slider-arr d-flex justify-content-end">
-                    <span class="range-slider__type_net"><input type="checkbox" id="backup-add" class="mr-2" /> Backup disk <i class="fas fa-question-circle cursor-help mr-1" data-toggle="tooltip" data-placement="top" title="Le backup de disque regroupe la taille totale des boites + la taille de disque supplémentaire"></i></span>
+                    <span class="range-slider__type_net"><input type="checkbox" id="backup-add" class="mr-2" /> Backup disk <i class="fas fa-question-circle cursor-help mr-1" data-toggle="tooltip" data-placement="top" title="Le backup de disque regroupe la taille du disque Pack + la taille de disque supplémentaire"></i></span>
                     <!-- <span id="ip-add" class="range-slider__value bg-success cursor"><i class="fa fa-plus" aria-hidden="true"></i></span> -->
                     <div class="d-flex">
                         <span id="backup-disk-price" class="range-slider__value_price_net">0</span>
@@ -1141,7 +1157,6 @@
                     </div>
                 </div>
             </div>
-
 
             <h3 class="col-md-12 custom-title"><i class="fas fa-headset mr-2"></i>Options Support :</h3>
             <div class="row col-md-12 estimate-support">
@@ -1268,12 +1283,12 @@
                     <div class="d-flex">
                         <div>
                             <select class="custom-select mr-sm-2 bg-primary range-slider__list_price_total" id="term-select" onchange="checkTermeUpdate()" style="font-size: 15px; padding-top: 8px;">
-                              <option id="price-month" selected value="1" style="font-size: 15px;">Mensuel</option>
-                              <!-- <option id="price-six-months" value="6">06 Mois</option> -->
-                              <option id="price-year" value="2" style="font-size: 15px;">Annuelle 2%</option>
-                              <option id="price-year" value="5" style="font-size: 15px;">Annuelle 5%</option>
-                              <option id="price-year" value="7" style="font-size: 15px;">Annuelle 7%</option>
-                              <option id="price-year" value="10" style="font-size: 15px;">Annuelle 10%</option>
+                                <option id="price-month" selected value="1" style="font-size: 15px;">Mensuel</option>
+                                <!-- <option id="price-six-months" value="6">06 Mois</option> -->
+                                <option id="price-year" value="2" style="font-size: 15px;">Annuelle 2%</option>
+                                <option id="price-year" value="5" style="font-size: 15px;">Annuelle 5%</option>
+                                <option id="price-year" value="7" style="font-size: 15px;">Annuelle 7%</option>
+                                <option id="price-year" value="10" style="font-size: 15px;">Annuelle 10%</option>
                             </select>
                           </div>
                         <!-- <span id="supp-price" class="range-slider__value_price_total">0</span> -->
@@ -1304,7 +1319,7 @@
                 <div class="modal-content">
                 
                 <div class="modal-header bg-light">
-                    <h5 class="modal-title" id="exampleModalLabel">Estimation Solution Zimbra personalisée</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Estimation Web Hosting</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -1334,36 +1349,34 @@
             
                         <div class="col-md-5 p-0">
                             <ul style="list-style-type: none; letter-spacing: 1px; line-height: 1.2rem; text-align: left;">
-                                <br/><br/><br/><br/>
-                                <li style="font-size: 13px;"><b>Le: </b><span id="datetime-pdf"></span></li>
-                                <br/><br/><br/><br/>
+                                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                                 <li style="font-size: 13px;"><b>Client: <span id="client-name-pdf"></span></b></li> 
                                 <li style="font-size: 13px;"><b>Adresse: </b><span id="client-address-pdf"></span></li>
                             </ul>
                         </div>
                     </div>
                     <h3 class="mb-2" style="margin-top: -3px;">Devis N°: <span id="devis-num-pdf"></span></h3>
-                    <h4 class="mb-2">Solution Zimbra : </h4>
+                    <h4 class="mb-2">Solution E-mail Hosting : </h4>
                     <table class="table">
                         <thead class="bg-primary text-white">
                             <tr>
-                                <th colspan="3">Type de Boite</th>
+                                <th colspan="3">Pack E-mail</th>
                                 <th>Prix (DZD)/mois</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td id="pack-type-pdf">MESS-BASIC-Z</td>
+                                <td id="pack-type-pdf">MailH-PackS</td>
                                 <td colspan="2">
                                     <ul style="list-style-type: none; line-height: 1.5rem; text-align: left;">
-                                        <li>0<span id="zimbra-disk-pdf">1</span> Go de Stockage</li>
-                                        <li>Messagerie POP, IMAP, SMTP</li>
-                                        <li>Contact / Taches / Client Web Mobile.</li>
-                                        <li>Antivirus</li>
-                                        <li><span id="zimbra-tcts-pdf">---</span></li>
-                                        <li><span id="zimbra-cal-pdf">---</span></li>
-                                        <li><span id="zimbra-mapi-pdf">---</span></li>
-                                        <li><span id="zimbra-cnx-pdf">---</span></li>
+                                        <li>Espace Disque: <span id="w-wdisk-pdf">05Mo</span></li>
+                                        <li>Comptes E-Mail: <span id="w-cemail-pdf">05</span></li>
+                                        <li>Frais d’activation</li>
+                                        <li>Nom de domaine .DZ Inclus</li>
+                                        <li>Transfert de domaine</li>
+                                        <li>Trafic illimité</li>
+                                        <li>Alias E-mail / Redirection</li>
+                                        <li>Anti Spam / Anti Virus</li>
                                     </ul>
                                 </td>
                                 <td id="pack-price-pdf">200</td>
@@ -1371,23 +1384,17 @@
                         </tbody>
                     </table>
                     
-                    <h4 class="mb-2">Extension Zimbra : </h4>
+                    <h4 class="mb-2">Extension E-mail : </h4>
                     <table class="table">
                         <thead class="bg-primary text-white">
                             <tr>
                             <th>Ressource</th>
-                            <th>Quantitée (boite/Go)</th>
+                            <th>Quantitée (Go)</th>
                             <th>Prix unit (DZD)</th>
                             <th>Prix (DZD)/mois</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                            <td>Boite</td>
-                            <td id="ram-value-pdf">0</td>
-                            <td>x <span id="box-price-value-pdf">200</span></td>
-                            <td id="ram-price-pdf">0</td>
-                            </tr>
                             <tr>
                             <td>Ext-STOR</td>
                             <td id="disk-value-pdf">0</td>
@@ -1400,16 +1407,29 @@
                             <td>x 30</td>
                             <td id="disk-backup-price-pdf">0</td>
                             </tr>
+                        </tbody>
+                    </table>
+                    <br/><br/><br/><br/><br/>
+                    <h4 class="mb-2" style="margin-top: 1.5rem !important;">Managed services : </h4>
+                    <table class="table">
+                        <thead class="bg-primary text-white">
                             <tr>
-                            <td>Managed services</td>
-                            <td id="mgservice-qte-pdf">0</td>
-                            <td id="mgservice-ut-pdf">x 0</td>
-                            <td id="mgservice-price-pdf">0</td>
+                                <th>Managed services</th>
+                                <th>Quantitée (Heure/Jour)</th>
+                                <th>Prix unit (DZD)</th>
+                                <th>Prix (DZD)/mois</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Managed services</td>
+                                <td id="mgservice-qte-pdf">0</td>
+                                <td id="mgservice-ut-pdf">x 0</td>
+                                <td id="mgservice-price-pdf">0</td>
                             </tr>
                         </tbody>
                     </table>
-                    <br/>
-                    <h4 class="mb-2 mt-3">Support : </h4>
+                    <h4 class="mb-2 mt-2">Support : </h4>
                     <table class="table">
                         <thead class="bg-primary text-white">
                             <tr>
@@ -1434,7 +1454,6 @@
                             </tr>
                         </tbody>
                     </table>
-                    <br/>
                     <h4 class="mb-2">Estimation totale : </h4>
                     <table class="table">
                         <thead class="bg-primary text-white">
@@ -1487,7 +1506,8 @@
                         </tbody>
                     </table>
                     <ul class="mb-3 pl-4 pr-4" style="line-height: 1.5rem; margin-top: 55px; list-style-type: none;">
-                        <li style="padding-bottom: 3px;" class="text-info"><b>Info : </b><span style="font-size: 15px;">Si vous paieriez un abonnement d'une année à la fois (cash), vous bénéficieriez une reduction de <span id="yr-discount-pdf">-%</span>.</span></li>
+                        <li style="padding-bottom: 5px;" class="text-info"><b>Info : </b><span style="font-size: 15px;">Si vous paieriez un abonnement d'une année à la fois (cash), vous bénéficieriez une reduction de <span id="yr-discount-pdf">-%</span>.</span></li>
+                        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                         <li style="padding-bottom: 3px;"><b>Type de paiement : </b><span style="font-size: 15px;">Virement bancaire / Chèque / Espèces (un timbre de 1% sera rajouté en sus).</span></li>
                         <li style="padding-bottom: 3px;"><b>Modalité de paiement : </b><span style="font-size: 15px;">Payement trimestriel comme suit : 1er payement du 1er trimestre a la commande, les autres payements au plus trad le 1er jour de chaque début de trimestre.</span></li>
                         <!-- <li style="padding-bottom: 3px;"><b>Modalité de paiement (Option 01): </b><span style="font-size: 15px;">100 % à la commande pour une année, une remise de 5% sera offert pour cette option.</span></li>
@@ -1495,14 +1515,14 @@
                         <li style="padding-bottom: 3px;"><b>Délai de livraison : </b><span style="font-size: 15px;">Delai de mise en place de la messagerie 10 J. ADEXCLOUD, garantie la disponibilité H24/7J/7 sous les conditions d’utilisations</span></li>
                         <li style="padding-bottom: 3px;"><b>Durée de la prestation : </b><span style="font-size: 15px;">Engagement Minimum 12 mois.</span></li>
                         <!-- <li style="padding-bottom: 3px;"><b>Période d’essai : </b><span style="font-size: 15px;">2 semaines gratuite, si toute fois le client désire avoir une période de test au-delà de 2 se-maines, ADEXCLOUD, pourra concéder une période de test d’un(01) Mois supplémentaire sans engagement annuel moyennement un pré-payement d’abonnement équivalant au mois d’essai.</span></li> -->
-                        <br/><br/><br/><br/><br/><br/><br/>
+                        <br/><br/>
                         <hr/>
-                        <li style="padding-bottom: 3px;" class="text-black">Vous pouvez consulter nos offres Zimbra sur le site par un clique | scan du code ci-dessous: </li>
+                        <li style="padding-bottom: 2px;" class="text-black">Vous pouvez consulter nos offres E-mail Hosting sur le site par un clique | scan du code ci-dessous: </li>
                     </ul>
-                    <div style="padding-left: 30px;">
+                    <div style="padding-left: 50px;">
                         <!--<img src='https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fadexcloud.dz%2Fproduct%2F5%2FVPS&chs=120x120&choe=UTF-8&chld=L|2' alt='alt'/>-->
-                        <a href='https://adexcloud.dz/product/9/Solution%20de%20Messagerie%20Pro' border='0' style='cursor:pointer'  rel='nofollow' target="_blank">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAIAAACzY+a1AAAABmJLR0QA/wD/AP+gvaeTAAADw0lEQVR4nO2d0W7rQAgFm6v+/y/3vlqR1gID60w889g6aytH5AiWxa+/v78fIfPv7geQKkqIRwnxKCEeJcSjhHiUEI8S4vk9+d/r9Wq/X6SScLzv8frs3yPrV1jda/P3ZhTiUUI8SojnzAuPVKrhK2/IetjqmqwvVvwy+z1MfG9vGIV4lBCPEuKJeuGRyG90l7et7lvxuRUR/6t4ZNf39oZRiEcJ8Sghnite2EWXN1Rqksf1s/49UQu9gFGIRwnxKCGeO71woraZ9c5snpet627AKMSjhHiUEM8VL+zygEheFfGqbA0z+/xd/jfknUYhHiXEo4R4ol44XQ/M9osembi+0u+6umYIoxCPEuJRQjyvDyn0Te8dVnLByjobMArxKCEeJcQzdb6w0mOSze0q61TywtXzVM5EXngGoxCPEuJRQjzRvDBbD8zWDDf7R+qzH37WwijEo4R4lBBPNS/s8sgIlT3FyJpHujwye7154RNRQjxKiOfMCyseU8nhJjx19QwVL5+oA3vW/okoIR4lxFM9X9iVq3XlWJFni1zTVdvsmj93glGIRwnxKCGes/3Cyj7WzvnaXXXOnfeNrH/E/cJvRgnxKCGeK70zR3a+F6LCdG/OTo9/wyjEo4R4lBBPNS9cMVHbnOhhmei7WTHRB/tjFH4BSohHCfFMvbOpcg4hS9d7lCp7nDu9/w2jEI8S4lFCPJ3vbIrM/MzmcJUzfNN53vQ+ZdAXjUI8SohHCfFcmUfaVXvsOsMwMS9tYh90yJuNQjxKiEcJ8UzNI+3yxdWa2c9m18wy4f1BjEI8SohHCfFc8cJp/9jZ8zJdz9zgi0YhHiXEo4R4rvSRTs8ajdwrQsU779oL9HzhE1FCPEqIp9pHGvlNz+Y60/0y2c9WfKtrbtwJRiEeJcSjhHh2zGA7MvHOh0rNNuJ/ESr7ne4XPh0lxKOEeKpnKibmdlbqmdMzwVdMe6c10m9GCfEoIZ4732u/cx73xMyayPWrzzbOaDUK8SghHiXEMzWDbcVED8vO58mus2HGm1GIRwnxKCGeqRlsR7rmsU2fT+jys65U27zwKSghHiXE0zmD7cj02fmufs7sjJvs7JsVjfmuUYhHCfEoIZ5qH+lOKj0vO3t8Is/TWH82CvEoIR4lxPPpXtjV23LXOY3svHLPVDwRJcSjhHiueOFE6+nE+cKu90xF1uza+7yAUYhHCfEoIZ4r76mYYOJ8YWT9nWuu1i+uaRTiUUI8SojnzvOF0oJRiEcJ8SghHiXEo4R4lBCPEuJRQjz/AZpOEDqTIiDOAAAAAElFTkSuQmCC" rel='nofollow'/>
+                        <a href='https://adexcloud.dz/product/15/E-mail%20Hosting' border='0' style='cursor:pointer'  rel='nofollow' target="_blank">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAIAAACzY+a1AAAABmJLR0QA/wD/AP+gvaeTAAADQklEQVR4nO2dQW4DIQwAu1X//+X0GBSVBtY2MMrMsdpsUEauZTBwPR6PLyHzvXsAEkWFeFSIR4V4VIhHhXhUiEeFeFSIR4V4VIhHhXhUiEeFeFSIR4V4fm585rqu9HGMrDy339s+3xtP75299/Se6b1z1+/wglGIR4V4VIjnTi5siXRP9XLJSK6aHcPId82+M/L8yBgGMQrxqBCPCvFEc2HLyP/0SG6brfMi9WKErN9hEKMQjwrxqBBPZi7MIpJLZvPZ7HzpgbuIjEI8KsSjQjwn5sJebTdSL0bWAivW/xZgFOJRIR4V4snMhVk100hOquhtyao1F9eORiEeFeJRIZ5oLqyupUZqvtk51ZH3zOazjTWlUYhHhXhUiOc6cAGsJasPJauP5sCfyyjEo0I8KsRzJxdGaqCsOcyKHBmpHbP+fgOjEI8K8agQz4q6MKvGysorkT0YFWuHwbxoFOJRIR4V4qnqI43klax97tU9L4f02hiFeFSIR4V4onVhRc7L2vMX6ampHqdzpPJEhXhUiCczF0Z6PrP6QnvP9Kg+43RBD45RiEeFeFSI55Q+0orekxP2SLheKO9RIR4V4snsI62YJ8yag62oz7L6aYMYhXhUiEeFeKrO5l65Flhd2u5aEx3EKMSjQjwqxFPVO1PBaWfNjOB6obxHhXhUiKfqLt+VdydFzuBeeTdv1n2NLxiFeFSIR4V4ouuFWet/LRXrfCv3yC+uQY1CPCrEo0I8K/baz97N2yOy9lbRszPyfGQMgxiFeFSIR4V4dt5fWL3noff+rPPbZnGOVP5GhXhUiOeU/YUtWWd2V9ynWJ0vzYWfiArxqBBPVe/MLJG5zV1znpG863qhPFEhHhXiic6RVuxVn11frK7/Iv077i+U96gQjwrxVO2171Fx7+7sGFY+n/XZfzAK8agQjwrx7OydGSFSn2Xlzura196ZT0eFeFSI5/Rc2LJyT2HWXskezpHKExXiUSGezFy461zQ3hiy1vlm92ZExnYDoxCPCvGoEE/mPRURInmlZWWPaw/PnZE5VIhHhXhO3F8oUxiFeFSIR4V4VIhHhXhUiEeFeFSIR4V4VIhHhXhUiEeFeFSIR4V4VIjnF/7wLCwO/jMoAAAAAElFTkSuQmCC" rel='nofollow'/>
                         </a>
                     </div>
                     <div class="col-md-6 offset-7">
@@ -1566,21 +1586,19 @@
 
 
         var costs = new Array();
-        costs["small"]=200;
-        costs["medium"]=300;
-        costs["large"]=500;
+        costs["small"]=300;
+        costs["medium"]=800;
+        costs["large"]=1900;
+        costs["xlarge"]=3700;
         costs["disk"]=30;
         costs["SUPP-STAND"]=0;
         costs["SUPP-BUSN"]=20000;
         costs["SUPP-PREM"]=40000;
         costs["SUPP-PLAT"]=60000;
 
-        var box_value = 0;
-
         // List of prices variables
 
-        var pack_price = 200;
-        var box_price = 0;
+        var pack_price = 300;
         var disk_price = 0;
         var disk_backup_price = 0;
         var mgservice_hr_price = 0;
@@ -1588,53 +1606,29 @@
         var supp_price = 0;
         var total_price = 0;
 
-/*         // List Pack Small
+        // List Pack S
 
-        var pack_small_detail = Array();
-        pack_small_detail["vCore"]=01;
-        pack_small_detail["RAM"]=02;
-        pack_small_detail["Disk"]=40;
-        
-        // List Pack Medium
-        
-        var pack_medium_detail = Array();
-        pack_medium_detail["vCore"]=02;
-        pack_medium_detail["RAM"]=04;
-        pack_medium_detail["Disk"]=80;
-        
-        // List Pack Large
-        
-        var pack_large_detail = Array();
-        pack_large_detail["vCore"]=04;
-        pack_large_detail["RAM"]=08;
-        pack_large_detail["Disk"]=100; */
+        var pack_s_detail = Array();
+        pack_s_detail["wdisk"]="05 Go";
+        pack_s_detail["cemail"]="05 Go";
 
-        // List Zimbra Basic
+        // List Pack M
 
-        var pack_basic_detail = Array();
-        pack_basic_detail["zdisk"]=01;
-        pack_basic_detail["ztcts"]="---";
-        pack_basic_detail["zcal"]="---";
-        pack_basic_detail["zmapi"]="---";
-        pack_basic_detail["zcnx"]="---";
+        var pack_m_detail = Array();
+        pack_m_detail["wdisk"]="20 Go";
+        pack_m_detail["cemail"]="20 Go";
 
-        // List Zimbra Standard
+        // List Pack L
 
-        var pack_standard_detail = Array();
-        pack_standard_detail["zdisk"]=02;
-        pack_standard_detail["ztcts"]="Zimbra Touch Client Tabl/SP";
-        pack_standard_detail["zcal"]="Calendrier";
-        pack_standard_detail["zmapi"]="---";
-        pack_standard_detail["zcnx"]="---";
+        var pack_l_detail = Array();
+        pack_l_detail["wdisk"]="50 Go";
+        pack_l_detail["cemail"]="50 Go";
 
-        // List Zimbra Pro
+        // List Pack XL
 
-        var pack_pro_detail = Array();
-        pack_pro_detail["zdisk"]=05;
-        pack_pro_detail["ztcts"]="Zimbra Touch Client Tabl/SP";
-        pack_pro_detail["zcal"]="Calendrier";
-        pack_pro_detail["zmapi"]="Connecteur Outlook MAPI/Sync Mobile";
-        pack_pro_detail["zcnx"]="Zimbra Connect: Chat/partage écran,fichier";
+        var pack_xl_detail = Array();
+        pack_xl_detail["wdisk"]="100 Go";
+        pack_xl_detail["cemail"]="100 Go";
 
         // List Support Standard 
 
@@ -1702,21 +1696,6 @@
         output_client_address_pdf.innerHTML = this.value;
         }
 
-        // Date and Time
-
-        var currentdate = new Date(); 
-        var datetime = currentdate.getDate() + "/"
-                + (currentdate.getMonth()+1)  + "/" 
-                + currentdate.getFullYear();
-        //        + " @ "  
-        //        + currentdate.getHours() + ":"  
-        //        + currentdate.getMinutes() + ":" 
-        //        + currentdate.getSeconds();
-
-        // console.log("Datetime: ", datetime)
-        var output_datetime_pdf = document.getElementById("datetime-pdf");
-        output_datetime_pdf.innerHTML = datetime;
-
 
         function onlyOnePack(checkbox) {
             var output_pack_price = document.getElementById("pack-price");
@@ -1725,46 +1704,39 @@
             // Update Pack Info For PDF
             var output_pack_price_pdf = document.getElementById("pack-price-pdf");
             output_pack_price_pdf.innerHTML = costs[checkbox.id];
-            var output_box_price_value_pdf = document.getElementById("box-price-value-pdf")
-            output_box_price_value_pdf.innerHTML = costs[checkbox.id];
+            
             var output_pack_type_pdf = document.getElementById("pack-type-pdf");
             // output_pack_type_pdf.innerHTML = "Pack " + checkbox.id;
             
-            var output_zimbra_disk_pdf = document.getElementById("zimbra-disk-pdf");
-            var output_zimbra_tcts_pdf = document.getElementById("zimbra-tcts-pdf");
-            var output_zimbra_cal_pdf = document.getElementById("zimbra-cal-pdf");
-            var output_zimbra_mapi_pdf = document.getElementById("zimbra-mapi-pdf");
-            var output_zimbra_cnx_pdf = document.getElementById("zimbra-cnx-pdf");
+            var output_w_wdisk_pdf = document.getElementById("w-wdisk-pdf");
+            var output_w_cemail_pdf = document.getElementById("w-cemail-pdf");
 
             /* var output_pack_ram_pdf = document.getElementById("pack-ram-pdf");
             var output_pack_disk_pdf = document.getElementById("pack-disk-pdf"); */
             
             if (checkbox.id === "small") {
-                output_zimbra_disk_pdf.innerHTML = pack_basic_detail["zdisk"];
-                output_zimbra_tcts_pdf.innerHTML = pack_basic_detail["ztcts"];
-                output_zimbra_cal_pdf.innerHTML = pack_basic_detail["zcal"];
-                output_zimbra_mapi_pdf.innerHTML = pack_basic_detail["zmapi"];
-                output_zimbra_cnx_pdf.innerHTML = pack_basic_detail["zcnx"];
+                output_w_wdisk_pdf.innerHTML = pack_s_detail["wdisk"];
+                output_w_cemail_pdf.innerHTML = pack_s_detail["cemail"];
                 
-                output_pack_type_pdf.innerHTML = "MESS-BASIC-Z";
+                output_pack_type_pdf.innerHTML = "MailH-PackS";
             }
             if (checkbox.id === "medium") {
-                output_zimbra_disk_pdf.innerHTML = pack_standard_detail["zdisk"];
-                output_zimbra_tcts_pdf.innerHTML = pack_standard_detail["ztcts"];
-                output_zimbra_cal_pdf.innerHTML = pack_standard_detail["zcal"];
-                output_zimbra_mapi_pdf.innerHTML = pack_standard_detail["zmapi"];
-                output_zimbra_cnx_pdf.innerHTML = pack_standard_detail["zcnx"];
+                output_w_wdisk_pdf.innerHTML = pack_m_detail["wdisk"];
+                output_w_cemail_pdf.innerHTML = pack_m_detail["cemail"];
                 
-                output_pack_type_pdf.innerHTML = "MESS-STAND-Z";
+                output_pack_type_pdf.innerHTML = "MailH-PackM";
             }
             if (checkbox.id === "large") {
-                output_zimbra_disk_pdf.innerHTML = pack_pro_detail["zdisk"];
-                output_zimbra_tcts_pdf.innerHTML = pack_pro_detail["ztcts"];
-                output_zimbra_cal_pdf.innerHTML = pack_pro_detail["zcal"];
-                output_zimbra_mapi_pdf.innerHTML = pack_pro_detail["zmapi"];
-                output_zimbra_cnx_pdf.innerHTML = pack_pro_detail["zcnx"];
+                output_w_wdisk_pdf.innerHTML = pack_l_detail["wdisk"];
+                output_w_cemail_pdf.innerHTML = pack_l_detail["cemail"];
                 
-                output_pack_type_pdf.innerHTML = "MESS-PRO-Z";
+                output_pack_type_pdf.innerHTML = "MailH-PackL";
+            }
+            if (checkbox.id === "xlarge") {
+                output_w_wdisk_pdf.innerHTML = pack_xl_detail["wdisk"];
+                output_w_cemail_pdf.innerHTML = pack_xl_detail["cemail"];
+                
+                output_pack_type_pdf.innerHTML = "MailH-PackXL";
             }
             
             output_pack_price_pdf.innerHTML = costs[checkbox.id];
@@ -1775,56 +1747,11 @@
                 if (item !== checkbox) item.checked = false
                 if (item === checkbox) item.checked = true
             })
-            boxSizing()
             totalPrice()
             checkTermeUpdate()
         }
 
         totalPrice()
-
-        function boxSizing() {
-
-        // Estimate Boite Price //
-
-        var slider_box = document.getElementById("box-range");
-        var output_box_value = document.getElementById("box-value");
-        var output_box_price = document.getElementById("box-price");
-        output_box_value.innerHTML = slider_box.value;
-        output_box_price.innerHTML = slider_box.value * pack_price;
-
-        box_value = slider_box
-
-        // Update Boite Info For PDF
-
-        var output_box_value_pdf = document.getElementById("ram-value-pdf");
-        var output_box_price_pdf = document.getElementById("ram-price-pdf");
-        output_box_value_pdf.innerHTML = slider_box.value;
-        output_box_price_pdf.innerHTML = slider_box.value * pack_price;
-
-        //
-
-        slider_box.oninput = function() {
-            output_box_value.innerHTML = this.value;
-            output_box_price.innerHTML = this.value * pack_price;
-
-            box_value = slider_box.value
-
-            // Update Boite Info For PDF
-
-            output_box_value_pdf.innerHTML = this.value;
-            output_box_price_pdf.innerHTML = this.value * pack_price;
-
-            //
-
-            box_price = this.value * pack_price;
-            console.log("boxxx price: ", box_price)
-            backupDisk()
-            totalPrice()
-            checkTermeUpdate()
-        }
-        
-        box_price = slider_box.value * pack_price;
-        }
 
         // Estimate Disk Price
 
@@ -1867,20 +1794,26 @@
         var checkbox = document.getElementById('backup-add')
 
         if(checkbox.checked) {
-        if (pack_price == "200") {
-            disk_backup_price = box_value.value * 1 * 30 + disk_price
-            console.log("backup disk price : ", disk_backup_price)
-            output_backup_price.innerHTML = disk_backup_price
-            output_disk_backup_price_pdf.innerHTML = disk_backup_price
-        }
         if (pack_price == "300") {
-            disk_backup_price = box_value.value * 2 * 30 + disk_price
+            disk_backup_price = 5 * 30 + disk_price
             console.log("backup disk price : ", disk_backup_price)
             output_backup_price.innerHTML = disk_backup_price
             output_disk_backup_price_pdf.innerHTML = disk_backup_price
         }
-        if (pack_price == "500") {
-            disk_backup_price = box_value.value * 5 * 30 + disk_price
+        if (pack_price == "800") {
+            disk_backup_price = 20 * 30 + disk_price
+            console.log("backup disk price : ", disk_backup_price)
+            output_backup_price.innerHTML = disk_backup_price
+            output_disk_backup_price_pdf.innerHTML = disk_backup_price
+        }
+        if (pack_price == "1900") {
+            disk_backup_price = 50 * 30 + disk_price
+            console.log("backup disk price : ", disk_backup_price)
+            output_backup_price.innerHTML = disk_backup_price
+            output_disk_backup_price_pdf.innerHTML = disk_backup_price
+        }
+        if (pack_price == "3700") {
+            disk_backup_price = 100 * 30 + disk_price
             console.log("backup disk price : ", disk_backup_price)
             output_backup_price.innerHTML = disk_backup_price
             output_disk_backup_price_pdf.innerHTML = disk_backup_price
@@ -1899,39 +1832,6 @@
         }
 
         }
-
-        //document.getElementById("myCheck").disabled = true;
-
-/*         function mgService() {
-    
-        var output_mgservice_qte_pdf = document.getElementById("mgservice-qte-pdf");    
-        var output_mgservice_price_pdf = document.getElementById("mgservice-price-pdf");
-        var output_mgservice_hr_price = document.getElementById("mgservice-hr-price");
-        var checkbox_hr = document.getElementById('mgservice-hr-add')
-
-        var output_mgservice_jr_price = document.getElementById("mgservice-jr-price");
-        var checkbox_jr = document.getElementById('mgservice-jr-add')    
-
-        if(checkbox_hr.checked) {
-            mgservice_price = 45000
-            output_mgservice_price.innerHTML = mgservice_price
-            output_mgservice_price_pdf.innerHTML = mgservice_price
-            output_mgservice_qte_pdf.innerHTML = 1
-        } else {
-            mgservice_price = 0
-            output_mgservice_price.innerHTML = mgservice_price
-            output_mgservice_price_pdf.innerHTML = mgservice_price
-            output_mgservice_qte_pdf.innerHTML = 0
-        }
-        checkbox.oninput = function() {
-            output_mgservice_price.innerHTML = this.value;
-            output_mgservice_price_pdf.innerHTML = this.value
-
-        totalPrice()
-        checkTermeUpdate()
-        }
-
-        } */
 
         function onlyOneMg(checkbox) {
             var checkboxes = document.getElementsByName('mgs')
@@ -2086,10 +1986,8 @@
         totalPrice()
         
         function totalPrice(){
-            boxSizing()
             backupDisk()
-            console.log("total ", box_price)
-            total_price = box_price + disk_price + disk_backup_price + mgservice_hr_price + mgservice_jr_price + supp_price;
+            total_price = pack_price + disk_price + disk_backup_price + mgservice_hr_price + mgservice_jr_price + supp_price;
             // console.log('Total Price: ',total_price)
             var output_total_price = document.getElementById("total-prod-price");
             output_total_price.innerHTML = total_price
@@ -2105,9 +2003,9 @@
             var output_total_yr_ht_price_pdf = document.getElementById("total-yr-ht-prod-price-pdf");
             output_total_yr_ht_price_pdf.innerHTML = total_price * 12
 
-            //var discount = Math.round(total_price * 12 * 0.05)
-            //var output_total_yr_price_pdf = document.getElementById("total-yr-prod-price-pdf");
-            //output_total_yr_price_pdf.innerHTML = total_price * 12
+            var discount = Math.round(total_price * 12 * 0.05)
+            var output_total_yr_price_pdf = document.getElementById("total-yr-prod-price-pdf");
+            output_total_yr_price_pdf.innerHTML = total_price * 12
 
             //
         }
@@ -2201,7 +2099,7 @@
                 // .save();
             html2pdf(element, {
                 margin:       8,
-                filename:     'offre tecnico-comerciale zimbra-cloud.pdf',
+                filename:     'offre tecnico-comerciale email-hosting.pdf',
                 image:        { type: 'jpg', quality: 0.99 },
                 html2canvas:  { scale: 1, logging: true, dpi: 192, letterRendering: true },
                 jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }

@@ -102,7 +102,7 @@ router.get('/dashboard', checkAuth, async (req, res) => {
 
 router.get('/vps-offer-gen', async (req, res) => {
     // quering offers and adding a new parameter for checking verification
-    res.render('vps-offer-gen', { email: "ar.boulahdour@outlook.com" }); // , { email: req.user.email }
+    res.render('vps-offer-gen', { email: req.user.email }); // , { email: req.user.email }
 });
 
 router.get('/zimbra-offer-gen', checkAuth, async (req, res) => {
@@ -123,6 +123,11 @@ router.get('/eboutik-offer-gen', checkAuth, async (req, res) => {
 router.get('/web-email-offer-gen', checkAuth, async (req, res) => {
     // quering offers and adding a new parameter for checking verification
     res.render('web-email-offer-gen', { email: req.user.email });
+});
+
+router.get('/baremetal-srv-offer-gen', checkAuth, async (req, res) => {
+    // quering offers and adding a new parameter for checking verification
+    res.render('baremetal-srv-offer-gen', { email: req.user.email });
 });
 
 router.use(userRoutes);

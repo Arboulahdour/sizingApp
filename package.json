@@ -4,7 +4,12 @@
   "description": "",
   "main": "src/server.js",
   "scripts": {
-    "start": "nodemon index"
+    "start": "nodemon index",
+    "pm2": "pm2 start src/server.js",
+    "pm2-startup": "pm2 startup systemd",
+    "pm2-save": "pm2 save",
+    "pm2-list": "pm2 ls",
+    "pm2-delete": "pm2 delete server"
   },
   "keywords": [],
   "author": "Abderrahmane Boulahdour",
@@ -23,9 +28,10 @@
     "nodemailer": "^6.5.0",
     "passport": "^0.4.1",
     "passport-google-oauth20": "^2.0.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "nodemon": "^2.0.12",
+    "pm2": "^5.1.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7"
   }
 }
